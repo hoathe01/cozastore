@@ -1,2 +1,2 @@
-# cozastore
+# Cozastore
 Dự án Coza Store
