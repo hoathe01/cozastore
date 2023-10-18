@@ -11,6 +11,7 @@ public class HelloController {
     @GetMapping
     public ResponseEntity<?> getGreeting(){
         BaseResponse response = new BaseResponse(200, "", "Hello World");
+
         return ResponseEntity.ok(response);
     }
     @PostMapping

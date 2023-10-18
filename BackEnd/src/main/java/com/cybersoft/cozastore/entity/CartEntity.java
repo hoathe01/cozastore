@@ -1,35 +1,31 @@
  package com.cybersoft.cozastore.entity;
+
  import lombok.Data;
+ import org.apache.catalina.User;
 
  import javax.persistence.*;
  import javax.persistence.Entity;
  import java.util.Date;
- import java.util.List;
 
 
- @Data
-@Entity(name = "blog")
-public class BlogEntity {
+@Data
+@Entity(name = "cart" )
+public class CartEntity {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
+
+  @ManyToOne
+  @JoinColumn(name = "idProduct")
+  private ProductEntity productEntity;
   
-  @Column(name = "title")
-  private String title;
-  
-  @Column(name = "image")
-  private String image;
-  
-  @Column(name = "content")
-  private String content;
+  @Column(name = "quanity")
+  private int quanity;
 
   @ManyToOne
   @JoinColumn(name = "idUser")
   private UserEntity userEntity;
-
-  @OneToMany(mappedBy = "blogEntity")
-  private List<CommentEntity> listComment;
   
   @Column(name = "createDate")
   private Date createDate;

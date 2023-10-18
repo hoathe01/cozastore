@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -34,4 +35,11 @@ public class UserEntity {
     @ManyToOne
     @JoinColumn(name = "idRole")
     private RoleEntity role;
+
+    @OneToMany(mappedBy = "userEntity")
+    private List<BlogEntity> blogList;
+
+    @OneToMany(mappedBy = "userEntity")
+    private List<CartEntity> cartList;
+
 }

@@ -29,4 +29,5 @@ public class RoleEntity {
 
     @OneToMany(mappedBy = "role")
     List<UserEntity> userList;
+
 }
