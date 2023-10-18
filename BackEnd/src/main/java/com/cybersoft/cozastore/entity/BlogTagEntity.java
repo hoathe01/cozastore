@@ -1,6 +1,11 @@
- package com.none.entity;
- import jakarta.persistence.*;
+ package com.cybersoft.cozastore.entity;
+
  import lombok.Data;
+
+ import javax.persistence.Column;
+ import javax.persistence.Entity;
+ import javax.persistence.Id;
+ import javax.persistence.ManyToOne;
  import java.util.Date;
 
 
@@ -8,7 +13,7 @@
 @Entity(name = "blogtag" )
 public class BlogTagEntity {
 
-  
+
   @Column(name = "idBlog")
   private int idBlog;
   
