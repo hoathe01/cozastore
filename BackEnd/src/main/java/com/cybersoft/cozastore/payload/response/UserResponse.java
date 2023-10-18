@@ -1,4 +1,4 @@
-package com.cybersoft.cozastore.payload.request;
+package com.cybersoft.cozastore.payload.response;
 
 import lombok.*;
 
@@ -7,9 +7,9 @@ import lombok.*;
 @Builder
 @Getter
 @Setter
-public class UserRes {
+public class UserResponse {
     private String username;
     private String password;
     private String email;
-    private RoleRes role;
+    private RoleResponse role;
 }

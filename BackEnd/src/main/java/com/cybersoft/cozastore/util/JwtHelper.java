@@ -27,7 +27,6 @@ public class JwtHelper {
                 .signWith(key)
                 .compact();
     }
-
     public String validToken(String token) {
         SecretKey key = Keys.hmacShaKeyFor(Decoders.BASE64URL.decode(secKey));
         return Jwts.parser()

@@ -1,4 +1,4 @@
-package com.cybersoft.cozastore.payload.request;
+package com.cybersoft.cozastore.payload.response;
 
 import lombok.*;
 
@@ -9,7 +9,7 @@ import java.util.List;
 @Builder
 @Getter
 @Setter
-public class RoleRes {
+public class RoleResponse {
     private String name;
-    List<UserRes> userList;
+    List<UserResponse> userList;
 }
