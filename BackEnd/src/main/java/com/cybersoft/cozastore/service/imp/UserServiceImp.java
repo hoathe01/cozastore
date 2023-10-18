@@ -1,10 +1,9 @@
 package com.cybersoft.cozastore.service.imp;
 
-import com.cybersoft.cozastore.dto.UserDTO;
-import com.cybersoft.cozastore.entity.UserEntity;
+import com.cybersoft.cozastore.payload.request.UserRes;
 
 import java.util.List;
 
 public interface UserServiceImp {
-    List<UserDTO> listUser();
+    List<UserRes> listUser();
 }

@@ -1,6 +1,7 @@
 package com.cybersoft.cozastore.entity;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
 
 import lombok.*;
 
