@@ -1,6 +1,7 @@
  package com.cybersoft.cozastore.entity;
  import lombok.Data;
  import javax.persistence.*;
+ import javax.persistence.Entity;
  import java.util.Date;
  import java.util.List;
 
