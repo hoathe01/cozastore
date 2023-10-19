@@ -22,6 +22,7 @@ public class UserService implements UserServiceImp {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    // Lấy danh sách User
     @Override
     public List<UserResponse> listUser() {
         try {
@@ -38,7 +39,7 @@ public class UserService implements UserServiceImp {
         }
     }
 
-    //SignUp
+    //SignUp -> Thêm User
     @Override
     public boolean addUser(UserRequest userRequest) {
         try {
@@ -54,7 +55,7 @@ public class UserService implements UserServiceImp {
             return false;
         }
     }
-
+    //Xóa User
     @Override
     public boolean deleteUser(int id) {
         try {
@@ -65,11 +66,11 @@ public class UserService implements UserServiceImp {
             return false;
         }
     }
-
+    //sửa User
     @Override
     public boolean updateUser(UserRequest userRequest) {
         try {
-            if (userRequest.getId() == 0){
+            if (userRequest.getId() == 0) {
                 return false;
             }
             userRepository.save(UserEntity.builder()
