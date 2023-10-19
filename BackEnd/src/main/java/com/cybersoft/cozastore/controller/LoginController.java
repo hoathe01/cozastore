@@ -36,7 +36,8 @@ public class LoginController {
     public ResponseEntity<?> signin(@RequestParam String email, @RequestParam String password) {
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(email, password);
         authenticationManager.authenticate(authenticationToken);
-        List<?> auth = (List<?>) SecurityContextHolder.getContext().getAuthentication().getAuthorities();
+        List<GrantedAuthority> auth = (List<GrantedAuthority>)SecurityContextHolder.getContext().getAuthentication().getAuthorities();
+
         String data = gson.toJson(auth);
         String token = jwtHelper.genToken(data);
         BaseResponse response = new BaseResponse(200,"",token);
