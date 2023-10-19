@@ -1,10 +1,9 @@
 package com.cybersoft.cozastore.repository;
 
-import com.cybersoft.cozastore.entity.UserEntity;
+import com.cybersoft.cozastore.entity.BlogEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<UserEntity, Integer> {
-
+public interface BlogRepository extends JpaRepository<BlogEntity,Integer> {
 }

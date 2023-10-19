@@ -16,22 +16,25 @@ public class UserController {
 
     @Autowired
     private UserServiceImp userServiceImp;
+
     @GetMapping
-    public ResponseEntity<?> getListUser(){
+    public ResponseEntity<?> getListUser() {
         List<UserResponse> list = userServiceImp.listUser();
-        BaseResponse baseResponse = new BaseResponse(200,"",list);
+        BaseResponse baseResponse = new BaseResponse(200, "", list);
         return ResponseEntity.ok(baseResponse);
     }
+
     @DeleteMapping
-    public ResponseEntity<?> deletetUser(int id){
+    public ResponseEntity<?> deletetUser(int id) {
         boolean isSuccess = userServiceImp.deleteUser(id);
-        BaseResponse baseResponse = new BaseResponse(200,"",isSuccess);
+        BaseResponse baseResponse = new BaseResponse(200, "", isSuccess);
         return ResponseEntity.ok(baseResponse);
     }
+
     @PutMapping
-    public ResponseEntity<?> updateUser(@RequestBody UserRequest userRequest){
+    public ResponseEntity<?> updateUser(@RequestBody UserRequest userRequest) {
         boolean isSuccess = userServiceImp.updateUser(userRequest);
-        BaseResponse baseResponse = new BaseResponse(200,"",isSuccess);
+        BaseResponse baseResponse = new BaseResponse(200, "", isSuccess);
         return ResponseEntity.ok(baseResponse);
     }
 }

@@ -1,27 +1,32 @@
- package com.cybersoft.cozastore.entity;
- import lombok.Data;
+package com.cybersoft.cozastore.entity;
 
- import javax.persistence.*;
- import javax.persistence.Entity;
- import java.util.Date;
+import lombok.Data;
+
+import javax.persistence.*;
+import javax.persistence.Entity;
+import java.util.Date;
+import java.util.List;
 
 
 @Data
-@Entity(name = "orders" )
+@Entity(name = "orders")
 public class OrdersEntity {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
-  
-  @Column(name = "idUser")
-  private int idUser;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-  @ManyToOne
-  @JoinColumn(name = "idStatus")
-  private StatusEntity statusEntity;
-  
-  @Column(name = "createDate")
-  private Date createDate;
+    @Column(name = "idUser")
+    private int idUser;
+
+    @ManyToOne
+    @JoinColumn(name = "idStatus")
+    private StatusEntity statusEntity;
+
+    @Column(name = "createDate")
+    private Date createDate;
+
+    @OneToMany(mappedBy = "orders")
+    private List<ProductOrderEntity> productList;
 
 }

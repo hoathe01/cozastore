@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
 public class CustomProviderAuthen implements AuthenticationProvider {
     @Autowired
@@ -23,18 +24,19 @@ public class CustomProviderAuthen implements AuthenticationProvider {
     @Autowired
     @Lazy
     private PasswordEncoder passwordEncoder;
+
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String email = authentication.getName();
         String password = authentication.getCredentials().toString();
 
         UserEntity userEntity = loginRepository.findByEmail(email);
-        if(userEntity != null){
-            if(passwordEncoder.matches(password,userEntity.getPassword())){
+        if (userEntity != null) {
+            if (passwordEncoder.matches(password, userEntity.getPassword())) {
                 List<GrantedAuthority> role = new ArrayList<>();
                 role.add(new SimpleGrantedAuthority(userEntity.getRole().getName()));
 
-                UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(email,userEntity.getPassword(),role);
+                UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(email, userEntity.getPassword(), role);
 
                 SecurityContextHolder.getContext().setAuthentication(token);
 

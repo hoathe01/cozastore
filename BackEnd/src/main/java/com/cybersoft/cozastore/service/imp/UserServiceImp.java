@@ -7,8 +7,11 @@ import java.util.List;
 
 public interface UserServiceImp {
     List<UserResponse> listUser();
+
     boolean addUser(UserRequest userRequest);
+
     boolean deleteUser(int id);
+
     boolean updateUser(UserRequest userRequest);
 
 }

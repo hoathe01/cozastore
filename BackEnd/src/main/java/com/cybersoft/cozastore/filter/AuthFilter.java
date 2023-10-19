@@ -25,6 +25,7 @@ public class AuthFilter extends OncePerRequestFilter {
     @Autowired
     private JwtHelper jwtHelper;
     private Gson gson = new Gson();
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String header = request.getHeader("Authorization");
@@ -32,15 +33,16 @@ public class AuthFilter extends OncePerRequestFilter {
             String token = header.substring(7);
             String data = jwtHelper.validToken(token);
             if (data != null && !data.isEmpty()) {
-                Type listRole = new TypeToken<ArrayList<SimpleGrantedAuthority>>() {}.getType();
-                List<GrantedAuthority> role = gson.fromJson(data,listRole);
+                Type listRole = new TypeToken<ArrayList<SimpleGrantedAuthority>>() {
+                }.getType();
+                List<GrantedAuthority> role = gson.fromJson(data, listRole);
                 UsernamePasswordAuthenticationToken user =
-                        new UsernamePasswordAuthenticationToken("","",role);
+                        new UsernamePasswordAuthenticationToken("", "", role);
 
                 SecurityContextHolder.getContext().setAuthentication(user);
 
             }
         }
-        filterChain.doFilter(request,response);
+        filterChain.doFilter(request, response);
     }
 }

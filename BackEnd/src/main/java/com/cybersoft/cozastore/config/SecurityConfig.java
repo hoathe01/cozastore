@@ -18,12 +18,12 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
-
 public class SecurityConfig {
     @Autowired
     private AuthenticationProvider authenticationProvider;
     @Autowired
     private AuthFilter authFilter;
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity.csrf().disable()
@@ -32,16 +32,19 @@ public class SecurityConfig {
                 .antMatchers("/hello").hasRole("ADMIN")
                 .antMatchers("/user").permitAll()
                 .antMatchers("/login/**").permitAll()
+                .antMatchers("/blog").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
+
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
 
         return new BCryptPasswordEncoder();
     }
+
     @Bean
     public AuthenticationManager authenticationManager(HttpSecurity httpSecurity) throws Exception {
 

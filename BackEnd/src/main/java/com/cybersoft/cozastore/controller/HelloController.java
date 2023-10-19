@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.*;
 @ControllerAdvice
 public class HelloController {
     @GetMapping
-    public ResponseEntity<?> getGreeting(){
+    public ResponseEntity<?> getGreeting() {
         BaseResponse response = new BaseResponse(200, "", "Hello World");
 
         return ResponseEntity.ok(response);
     }
+
     @PostMapping
-    public ResponseEntity<?> postGreeting(){
+    public ResponseEntity<?> postGreeting() {
         BaseResponse response = new BaseResponse(200, "", "Hello World");
         return ResponseEntity.ok(response);
     }
