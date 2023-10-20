@@ -12,6 +12,7 @@ import java.util.List;
 @Getter
 @Setter
 public class BlogResponse {
+
     private int id;
     private String title;
     private String image;
