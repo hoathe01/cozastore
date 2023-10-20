@@ -1,8 +1,12 @@
 package com.cybersoft.cozastore.service;
 
-import com.cybersoft.cozastore.entity.BlogEntity;
+import com.cybersoft.cozastore.entity.*;
+import com.cybersoft.cozastore.entity.key.BlogTagKey;
+import com.cybersoft.cozastore.payload.request.BlogRequest;
+import com.cybersoft.cozastore.payload.request.TagRequest;
 import com.cybersoft.cozastore.payload.response.*;
 import com.cybersoft.cozastore.repository.BlogRepository;
+import com.cybersoft.cozastore.repository.BlogTagRepository;
 import com.cybersoft.cozastore.service.imp.BlogServiceImp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +19,8 @@ import java.util.List;
 public class BlogService implements BlogServiceImp {
     @Autowired
     private BlogRepository blogRepository;
+    @Autowired
+    private BlogTagRepository blogTagRepository;
 
     @Override
     public List<BlogResponse> getListBlog() {
@@ -50,4 +56,25 @@ public class BlogService implements BlogServiceImp {
             return null;
         }
     }
+
+    @Override
+    public boolean addBlog(BlogRequest blogRequest) {
+        try {
+            blogRepository.save(BlogEntity.builder()
+                    .title(blogRequest.getTitle())
+                    .image(blogRequest.getImage())
+                    .content(blogRequest.getContent())
+                    .userEntity(UserEntity.builder()
+                            .id(blogRequest.getUser())
+                            .build())
+                    .listTag(null)
+                    .build());
+            return true;
+        } catch (Exception e) {
+            log.error(e.getLocalizedMessage());
+            return false;
+        }
+    }
+
+
 }

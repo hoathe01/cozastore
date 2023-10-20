@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -32,7 +33,7 @@ public class UserController {
     }
 
     @PutMapping
-    public ResponseEntity<?> updateUser(@RequestBody UserRequest userRequest) {
+    public ResponseEntity<?> updateUser(@Valid @RequestBody UserRequest userRequest) {
         boolean isSuccess = userServiceImp.updateUser(userRequest);
         BaseResponse baseResponse = new BaseResponse(200, "", isSuccess);
         return ResponseEntity.ok(baseResponse);

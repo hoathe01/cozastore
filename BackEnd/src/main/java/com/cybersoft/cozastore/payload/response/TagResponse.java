@@ -11,6 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 public class TagResponse {
+    private int id;
     private String name;
     private List<BlogResponse> listBlog;
 }

@@ -15,6 +15,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -47,7 +48,7 @@ public class LoginController {
     }
 
     @PostMapping("signup")
-    public ResponseEntity<?> sisnup(@RequestBody UserRequest userRequest) {
+    public ResponseEntity<?> sisnup(@Valid @RequestBody UserRequest userRequest) {
         boolean isSuccess = userServiceImp.addUser(userRequest);
         BaseResponse response = new BaseResponse(200, "", isSuccess);
         return new ResponseEntity<>(response, HttpStatus.OK);
