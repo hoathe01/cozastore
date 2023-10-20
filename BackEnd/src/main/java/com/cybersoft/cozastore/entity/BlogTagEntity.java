@@ -25,13 +25,11 @@ public class BlogTagEntity {
     private Date createDate;
 
     @ManyToOne
-    @MapsId("idBlog")
-    @JoinColumn(name = "idBlog",insertable = true,updatable = true, nullable = false)
+    @JoinColumn(name = "idBlog",insertable = false,updatable = false)
     private BlogEntity blog;
 
     @ManyToOne
-    @MapsId("idTag")
-    @JoinColumn(name = "idTag",insertable = true,updatable = true, nullable = false)
+    @JoinColumn(name = "idTag",insertable = false,updatable = false)
     private TagEntity tag;
 
 }

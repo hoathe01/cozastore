@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BlogTagRepository extends JpaRepository<BlogTagEntity, Integer> {
+    void deleteAllByBlog_Id(int id);
 }

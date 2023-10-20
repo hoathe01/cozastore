@@ -10,4 +10,7 @@ public interface BlogServiceImp {
     List<BlogResponse> getListBlog();
 
     boolean addBlog(BlogRequest blogRequest);
+    boolean deleteBlog(int id);
+
+    boolean updateBlog(BlogRequest blogRequest);
 }

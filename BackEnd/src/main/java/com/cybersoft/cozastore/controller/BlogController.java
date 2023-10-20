@@ -25,13 +25,21 @@ public class BlogController {
         BaseResponse response = new BaseResponse(200, "Danh Sách Blog", listBlog);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-
     @PostMapping
     public ResponseEntity<?> addBlog(@RequestBody BlogRequest blogRequest) {
         boolean isSuccess = blogServiceImp.addBlog(blogRequest);
-
-        blogRequest.getListTag().stream().forEach(tagRequest -> log.error(tagRequest.getId() + ""));
-
+        BaseResponse response = new BaseResponse(200, isSuccess ? "Thêm Thành Công" : "Thêm Thất Bai", isSuccess);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+    @DeleteMapping
+    public ResponseEntity<?> deleteBlog(@RequestParam int id) {
+        boolean isSuccess = blogServiceImp.deleteBlog(id);
+        BaseResponse response = new BaseResponse(200, isSuccess ? "Thêm Thành Công" : "Thêm Thất Bai", isSuccess);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+    @PutMapping
+    public ResponseEntity<?> updateBlog(@RequestBody BlogRequest blogRequest) {
+        boolean isSuccess = blogServiceImp.updateBlog(blogRequest);
         BaseResponse response = new BaseResponse(200, isSuccess ? "Thêm Thành Công" : "Thêm Thất Bai", isSuccess);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
