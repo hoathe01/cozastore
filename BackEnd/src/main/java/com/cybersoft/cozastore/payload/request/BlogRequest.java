@@ -15,7 +15,6 @@ import java.util.List;
 @Getter
 @Setter
 public class BlogRequest {
-
     private int id;
     private String title;
     private String image;

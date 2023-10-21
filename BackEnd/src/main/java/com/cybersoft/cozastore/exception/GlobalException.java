@@ -25,10 +25,10 @@ public class GlobalException {
         response.setData(null);
         return new ResponseEntity<>(response, HttpStatus.valueOf(401));
     }
-    @ExceptionHandler(value = {SQLException.class, RuntimeException.class})
+
+    @ExceptionHandler(value = {Exception.class})
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ResponseEntity<?> defaultErrorHandler(HttpServletRequest req, Exception e) throws Exception {
-
         BaseResponse response = new BaseResponse();
         response.setStatusCode(500);
         response.setMessage(e.getLocalizedMessage());

@@ -34,13 +34,13 @@ public class BlogController {
     @DeleteMapping
     public ResponseEntity<?> deleteBlog(@RequestParam int id) {
         boolean isSuccess = blogServiceImp.deleteBlog(id);
-        BaseResponse response = new BaseResponse(200, isSuccess ? "Thêm Thành Công" : "Thêm Thất Bai", isSuccess);
+        BaseResponse response = new BaseResponse(200, isSuccess ? "Xóa Thành Công" : "Xóa Thất Bai", isSuccess);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
     @PutMapping
     public ResponseEntity<?> updateBlog(@RequestBody BlogRequest blogRequest) {
         boolean isSuccess = blogServiceImp.updateBlog(blogRequest);
-        BaseResponse response = new BaseResponse(200, isSuccess ? "Thêm Thành Công" : "Thêm Thất Bai", isSuccess);
+        BaseResponse response = new BaseResponse(200, isSuccess ? "Sửa Thành Công" : "Sửa Thất Bai", isSuccess);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
