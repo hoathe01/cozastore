@@ -12,6 +12,7 @@ import java.util.List;
 @Getter
 @Setter
 public class ProductResponse {
+
     private int id;
     private String name;
     private String image;
@@ -23,8 +24,6 @@ public class ProductResponse {
     private ColorResponse colorEntity;
     private Date createDate;
 
-
-//    private List<CartEntity> cartList;
-//
-//    private List<ProductOrderEntity> ordersList;
+    private List<CartEntity> listCart;
+    private List<ProductOrderEntity> listOrder;
 }

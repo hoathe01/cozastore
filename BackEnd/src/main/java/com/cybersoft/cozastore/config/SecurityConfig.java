@@ -33,6 +33,7 @@ public class SecurityConfig {
                 .antMatchers("/user").permitAll()
                 .antMatchers("/login/**").permitAll()
                 .antMatchers("/blog").permitAll()
+                .antMatchers("/product").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
