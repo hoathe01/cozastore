@@ -8,19 +8,29 @@ import com.cybersoft.cozastore.payload.response.*;
 import com.cybersoft.cozastore.repository.BlogRepository;
 import com.cybersoft.cozastore.repository.BlogTagRepository;
 import com.cybersoft.cozastore.service.imp.BlogServiceImp;
+import io.jsonwebtoken.io.Decoders;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 
 @Service
 @Slf4j
 @Transactional
 public class BlogService implements BlogServiceImp {
+    @Value("${path.upload.file}")
+    private String FolderRoot;
+
     @Autowired
     private BlogRepository blogRepository;
     @Autowired
@@ -63,30 +73,26 @@ public class BlogService implements BlogServiceImp {
     }
 
     @Override
-    public boolean addBlog(BlogRequest blogRequest) {
+    public boolean addBlog(BlogRequest blogRequest, MultipartFile file) {
         try {
-            BlogEntity blog = blogRepository.save(BlogEntity.builder()
-                    .title(blogRequest.getTitle())
-                    .image(blogRequest.getImage())
-                    .content(blogRequest.getContent())
-                    .userEntity(UserEntity.builder()
-                            .id(blogRequest.getUser())
-                            .build())
-                    .build());
+            Path root = Paths.get(FolderRoot);
+            if (!Files.exists(root)) {
+                Files.createDirectory(root);
+            }
+            Files.copy(file.getInputStream(), root.resolve(file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
+            BlogEntity blog =
+                    blogRepository.save(BlogEntity.builder()
+                            .title(blogRequest.getTitle())
+                            .image(file.getOriginalFilename())
+                            .content(blogRequest.getContent())
+                            .userEntity(UserEntity.builder()
+                                    .id(blogRequest.getUser())
+                                    .build())
+                            .build());
             blogRequest.getListTag().forEach(
                     tagRequest -> blogTagRepository.save(BlogTagEntity.builder()
                             .blogTagKey(new BlogTagKey(blog.getId(), tagRequest.getId()))
                             .build()));
-           /*
-           for (TagRequest tag : blogRequest.getListTag()) {
-                BlogTagEntity blogTagEntity = new BlogTagEntity();
-                    BlogTagKey blogTagKey = new BlogTagKey();
-                    blogTagKey.setIdTag(tag.getId());
-                    blogTagKey.setIdBlog(blog.getId());
-                blogTagEntity.setBlogTagKey(blogTagKey);
-                blogTagRepository.save(blogTagEntity);
-            }
-             */
             return true;
         } catch (Exception e) {
             log.error(e.getLocalizedMessage());
@@ -97,6 +103,11 @@ public class BlogService implements BlogServiceImp {
     @Override
     public boolean deleteBlog(int id) {
         try {
+            Path root = Paths.get(FolderRoot);
+            if (!Files.exists(root)) {
+                Files.createDirectory(root);
+            }
+//            Files.deleteIfExists(root);
             blogTagRepository.deleteAllByBlog_Id(id);
             log.warn("ID đã xóa: " + id);
             blogRepository.deleteById(id);
@@ -108,21 +119,21 @@ public class BlogService implements BlogServiceImp {
     }
 
     @Override
-    public boolean updateBlog(BlogRequest blogRequest) {
+    public boolean updateBlog(BlogRequest blogRequest, MultipartFile file) {
         try {
-            if (blogRequest.getId() <= 0) {
+            if (blogRequest.getId() < 1) {
                 return false;
             }
             BlogEntity blog = blogRepository.save(BlogEntity.builder()
                     .id(blogRequest.getId())
                     .title(blogRequest.getTitle())
-                    .image(blogRequest.getImage())
+                    .image(file.getOriginalFilename())
                     .content(blogRequest.getContent())
                     .userEntity(UserEntity.builder()
                             .id(blogRequest.getUser())
                             .build())
                     .build());
-            blogTagRepository.deleteAllByBlog_Id(blogRequest.getId());
+            blogTagRepository.deleteAllByBlog_Id(blog.getId());
             blogRequest.getListTag().forEach(
                     tagRequest -> blogTagRepository.save(BlogTagEntity.builder()
                             .blog(BlogEntity.builder().id(blog.getId()).build())

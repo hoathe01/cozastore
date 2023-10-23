@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -25,9 +26,11 @@ public class BlogController {
         BaseResponse response = new BaseResponse(200, "Danh Sách Blog", listBlog);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
     @PostMapping
-    public ResponseEntity<?> addBlog(@RequestBody BlogRequest blogRequest) {
-        boolean isSuccess = blogServiceImp.addBlog(blogRequest);
+    public ResponseEntity<?> addBlog(@RequestPart BlogRequest blogRequest, @RequestParam MultipartFile file) {
+        blogRequest.getListTag().forEach(tagRequest -> log.info(tagRequest.getId() + ""));
+        boolean isSuccess = blogServiceImp.addBlog(blogRequest,file);
         BaseResponse response = new BaseResponse(200, isSuccess ? "Thêm Thành Công" : "Thêm Thất Bai", isSuccess);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
@@ -37,10 +40,10 @@ public class BlogController {
         BaseResponse response = new BaseResponse(200, isSuccess ? "Xóa Thành Công" : "Xóa Thất Bai", isSuccess);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-    @PutMapping
-    public ResponseEntity<?> updateBlog(@RequestBody BlogRequest blogRequest) {
-        boolean isSuccess = blogServiceImp.updateBlog(blogRequest);
-        BaseResponse response = new BaseResponse(200, isSuccess ? "Sửa Thành Công" : "Sửa Thất Bai", isSuccess);
-        return new ResponseEntity<>(response, HttpStatus.OK);
-    }
+//    @PutMapping
+//    public ResponseEntity<?> updateBlog(@RequestBody BlogRequest blogRequest, @RequestParam MultipartFile file) {
+//        boolean isSuccess = blogServiceImp.updateBlog(blogRequest,file);
+//        BaseResponse response = new BaseResponse(200, isSuccess ? "Sửa Thành Công" : "Sửa Thất Bai", isSuccess);
+//        return new ResponseEntity<>(response, HttpStatus.OK);
+//    }
 }

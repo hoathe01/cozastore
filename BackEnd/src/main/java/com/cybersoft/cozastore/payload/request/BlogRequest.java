@@ -5,6 +5,7 @@ import com.cybersoft.cozastore.payload.response.TagResponse;
 import com.cybersoft.cozastore.payload.response.UserResponse;
 import lombok.*;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.List;
 public class BlogRequest {
     private int id;
     private String title;
-    private String image;
+//    private MultipartFile image;
     private String content;
     private int user;
     private List<TagRequest> listTag;
