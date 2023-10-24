@@ -23,6 +23,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -103,11 +104,14 @@ public class BlogService implements BlogServiceImp {
     @Override
     public boolean deleteBlog(int id) {
         try {
-            Path root = Paths.get(FolderRoot);
+            Optional<BlogEntity> blogEntity = blogRepository.findById(id);
+            String imgName = blogEntity.get().getImage();
+            Path root = Paths.get(FolderRoot + imgName);
+            log.info(root.toString());
             if (!Files.exists(root)) {
                 Files.createDirectory(root);
             }
-//            Files.deleteIfExists(root);
+            Files.deleteIfExists(root);
             blogTagRepository.deleteAllByBlog_Id(id);
             log.warn("ID đã xóa: " + id);
             blogRepository.deleteById(id);
