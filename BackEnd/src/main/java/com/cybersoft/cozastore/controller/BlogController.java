@@ -15,6 +15,7 @@ import java.util.List;
 
 @RestController
 @Slf4j
+@CrossOrigin
 @RequestMapping("blog")
 public class BlogController {
     @Autowired
@@ -40,10 +41,10 @@ public class BlogController {
         BaseResponse response = new BaseResponse(200, isSuccess ? "Xóa Thành Công" : "Xóa Thất Bai", isSuccess);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-//    @PutMapping
-//    public ResponseEntity<?> updateBlog(@RequestBody BlogRequest blogRequest, @RequestParam MultipartFile file) {
-//        boolean isSuccess = blogServiceImp.updateBlog(blogRequest,file);
-//        BaseResponse response = new BaseResponse(200, isSuccess ? "Sửa Thành Công" : "Sửa Thất Bai", isSuccess);
-//        return new ResponseEntity<>(response, HttpStatus.OK);
-//    }
+    @PutMapping
+    public ResponseEntity<?> updateBlog(@RequestBody BlogRequest blogRequest, @RequestParam MultipartFile file) {
+        boolean isSuccess = blogServiceImp.updateBlog(blogRequest,file);
+        BaseResponse response = new BaseResponse(200, isSuccess ? "Sửa Thành Công" : "Sửa Thất Bai", isSuccess);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 }

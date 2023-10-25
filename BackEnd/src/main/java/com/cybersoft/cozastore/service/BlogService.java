@@ -47,7 +47,7 @@ public class BlogService implements BlogServiceImp {
                     .title(blogEntity.getTitle())
                     .image(blogEntity.getImage())
                     .content(blogEntity.getContent())
-                    .createDate(blogEntity.getCreateDate())
+                    .createDate(new DateResponse(blogEntity.getCreateDate()))
                     .user(UserResponse.builder()
                             .email(blogEntity.getUserEntity().getEmail())
                             .username(blogEntity.getUserEntity().getUsername())
@@ -128,6 +128,14 @@ public class BlogService implements BlogServiceImp {
             if (blogRequest.getId() < 1) {
                 return false;
             }
+            Optional<BlogEntity> blogEntity = blogRepository.findById(blogRequest.getId());
+            String imgName = blogEntity.get().getImage();
+            Path root = Paths.get(FolderRoot + imgName);
+            log.info(root.toString());
+            if (!Files.exists(root)) {
+                Files.createDirectory(root);
+            }
+            Files.deleteIfExists(root);
             BlogEntity blog = blogRepository.save(BlogEntity.builder()
                     .id(blogRequest.getId())
                     .title(blogRequest.getTitle())

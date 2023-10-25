@@ -17,7 +17,7 @@ public class BlogResponse {
     private String image;
     private String content;
     private UserResponse user;
-    private Date createDate;
+    private DateResponse createDate;
 
     private List<CommentResponse> listComment;
     private List<TagResponse> listTag;
