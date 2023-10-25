@@ -3,7 +3,6 @@ package com.cybersoft.cozastore.payload.response;
 import com.cybersoft.cozastore.entity.*;
 import lombok.*;
 
-import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 @AllArgsConstructor
@@ -24,6 +23,6 @@ public class ProductResponse {
     private ColorResponse colorEntity;
     private Date createDate;
 
-    private List<CartEntity> listCart;
-    private List<ProductOrderEntity> listOrder;
+    private List<CartResponse> listCart;
+//    private List<ProductOrderResponse> listOrder;
 }

@@ -1,10 +1,7 @@
 package com.cybersoft.cozastore.service;
 
 import com.cybersoft.cozastore.entity.ProductEntity;
-import com.cybersoft.cozastore.payload.response.CategoryResponse;
-import com.cybersoft.cozastore.payload.response.ColorResponse;
-import com.cybersoft.cozastore.payload.response.ProductResponse;
-import com.cybersoft.cozastore.payload.response.SizeResponse;
+import com.cybersoft.cozastore.payload.response.*;
 import com.cybersoft.cozastore.repository.ProductRepository;
 import com.cybersoft.cozastore.service.imp.ProductServiceImp;
 import lombok.extern.slf4j.Slf4j;
@@ -38,8 +35,16 @@ public class ProductService implements ProductServiceImp {
                             .name(productEntity.getSizeEntity().getName())
                             .build())
                     .createDate(productEntity.getCreateDate())
-                    .listCart(null)
-                    .listOrder(null)
+
+                    .listCart(productEntity.getListCart().stream()
+                            .map(cartEntity -> CartResponse.builder()
+                                    .id(cartEntity.getId())
+                                    .quanity(cartEntity.getQuanity())
+                                    .createDate(cartEntity.getCreateDate())
+                                    .build())
+                            .toList())
+
+//                    .listOrder(null)
 
                     .build()).toList();
 

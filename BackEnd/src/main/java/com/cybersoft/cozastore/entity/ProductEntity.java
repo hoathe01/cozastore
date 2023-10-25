@@ -47,9 +47,9 @@ public class ProductEntity {
     private Date createDate;
 
     @OneToMany(mappedBy = "productEntity")
-    private List<CartEntity> cartList;
+    private List<CartEntity> listCart;
 
     @OneToMany(mappedBy = "product")
-    private List<ProductOrderEntity> ordersList;
+    private List<ProductOrderEntity> listOrder;
 
 }

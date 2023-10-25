@@ -12,6 +12,7 @@ import java.util.Date;
 @Setter
 public class CartResponse {
 
-    private UserResponse userResponse;
+    private int id;
+    private int quanity;
     private Date createDate;
 }
