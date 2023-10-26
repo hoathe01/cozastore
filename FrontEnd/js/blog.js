@@ -3,20 +3,21 @@ $(document).ready(function () {
         method: "GET",
         url: "http://localhost:8080/blog"
     }).done(function (res) {
-            dataView = res.data;
+        dataView = res.data;
+
         var listTag = "";
-            // console.log(dataView);
         const element = document.getElementById('blog-view');
         let htmlAdd = "";
         for (let x of dataView) {
             console.log(x)
             let date = Date.parse(x.createDate)
             for (let t of x.listTag) {
-                listTag += t.name +", ";
+                listTag += t.name + ", ";
             }
-            htmlAdd +=`
-                    <div class="p-b-63">
-                        <a href="blog-detail.html" class="hov-img0 how-pos5-parent">
+
+            htmlAdd += `
+                    <div class="p-b-63" id="content-id" onclick="alert(${x.id})">
+                        <a href="#" class="hov-img0 how-pos5-parent">
                             <img src="../assets/file/${x.image}" alt="IMG-BLOG">
                             <div class="flex-col-c-m size-123 bg9 how-pos5">
                                 <span class="ltext-107 cl2 txt-center">${x.createDate.date}</span>
@@ -56,5 +57,10 @@ $(document).ready(function () {
             listTag = "";
         }
         element.innerHTML = htmlAdd;
-        });
+    });
+
+    function getBlog(id){
+        alert(id)
+        return null
+    }
 })

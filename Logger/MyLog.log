@@ -2081,3 +2081,66 @@ Caused by: java.io.IOException: Cannot delete C:\Users\Acer\AppData\Local\Temp\t
 2023-10-26 12:11:24.312  INFO 7488 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-10-26 12:11:24.322  INFO 7488 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-10-26 12:11:24.396  INFO 7488 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-26 20:07:43.873  INFO 129582 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 129582 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-26 20:07:43.874  INFO 129582 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-26 20:07:44.274  INFO 129582 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26 20:07:44.293  INFO 129582 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 5 JPA repository interfaces.
+2023-10-26 20:07:44.420  INFO 129582 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-26 20:07:44.421  INFO 129582 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-26 20:07:44.422  INFO 129582 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-26 20:07:44.430  INFO 129582 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-26 20:07:44.431  INFO 129582 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 554 ms
+2023-10-26 20:07:44.553  INFO 129582 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26 20:07:44.558  INFO 129582 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-10-26 20:07:44.591  INFO 129582 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-10-26 20:07:44.592  INFO 129582 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-26 20:07:44.891  INFO 129582 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-26 20:07:44.892  INFO 129582 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 20:07:45.081  WARN 129582 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'blogController': Unsatisfied dependency expressed through field 'blogServiceImp'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.cybersoft.cozastore.service.imp.BlogServiceImp' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-10-26 20:07:45.082  INFO 129582 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 20:07:45.083  INFO 129582 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-10-26 20:07:45.107  INFO 129582 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-10-26 20:07:45.108  INFO 129582 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-26 20:07:45.129  INFO 129582 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-10-26 20:07:45.159 ERROR 129582 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field blogServiceImp in com.cybersoft.cozastore.controller.BlogController required a bean of type 'com.cybersoft.cozastore.service.imp.BlogServiceImp' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.cybersoft.cozastore.service.imp.BlogServiceImp' in your configuration.
+
+2023-10-26 20:07:46.610  INFO 129582 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 129582 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-26 20:07:46.611  INFO 129582 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-26 20:07:46.784  INFO 129582 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26 20:07:46.794  INFO 129582 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 5 JPA repository interfaces.
+2023-10-26 20:07:46.876  INFO 129582 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-26 20:07:46.877  INFO 129582 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-26 20:07:46.877  INFO 129582 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-26 20:07:46.883  INFO 129582 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-10-26 20:07:46.884  INFO 129582 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 271 ms
+2023-10-26 20:07:46.957  INFO 129582 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26 20:07:46.960  INFO 129582 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-10-26 20:07:46.975  INFO 129582 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-10-26 20:07:46.975  INFO 129582 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-26 20:07:47.082  INFO 129582 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-26 20:07:47.083  INFO 129582 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 20:07:47.285  INFO 129582 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@68e08f13, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35d0481, org.springframework.security.web.context.SecurityContextPersistenceFilter@14c5db33, org.springframework.security.web.header.HeaderWriterFilter@11759339, org.springframework.security.web.authentication.logout.LogoutFilter@516d0841, com.cybersoft.cozastore.filter.AuthFilter@1d786237, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@b586fd5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3609c9dc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4fbaa54b, org.springframework.security.web.session.SessionManagementFilter@1289f2cf, org.springframework.security.web.access.ExceptionTranslationFilter@3824e4ca, org.springframework.security.web.access.intercept.AuthorizationFilter@62e4afad]
+2023-10-26 20:07:47.306  WARN 129582 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-26 20:07:47.435  INFO 129582 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-26 20:07:47.437  INFO 129582 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-26 20:07:47.451  INFO 129582 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-26 20:07:47.459  INFO 129582 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Started CozastoreApplication in 0.884 seconds (JVM running for 694.296)
+2023-10-26 20:07:47.461  INFO 129582 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
