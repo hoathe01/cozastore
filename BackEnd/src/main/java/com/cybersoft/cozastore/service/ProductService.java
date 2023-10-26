@@ -1,17 +1,34 @@
 package com.cybersoft.cozastore.service;
 
+import com.cybersoft.cozastore.entity.CategoryEntity;
+import com.cybersoft.cozastore.entity.ColorEntity;
 import com.cybersoft.cozastore.entity.ProductEntity;
+import com.cybersoft.cozastore.entity.SizeEntity;
+import com.cybersoft.cozastore.payload.request.ProductRequest;
 import com.cybersoft.cozastore.payload.response.*;
 import com.cybersoft.cozastore.repository.ProductRepository;
 import com.cybersoft.cozastore.service.imp.ProductServiceImp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.Date;
 import java.util.List;
 @Service
 @Slf4j
+@Transactional
 public class ProductService implements ProductServiceImp {
+
+    @Value("${path.upload.file}")
+    private String FolderRoot;
+
     @Autowired
     private ProductRepository productRepository;
     @Override
@@ -52,5 +69,41 @@ public class ProductService implements ProductServiceImp {
             log.error(e.getLocalizedMessage());
             return null;
         }
+    }
+
+    @Override
+    public boolean addProduct(ProductRequest productRequest, MultipartFile file) {
+        try {
+            Path root = Paths.get(FolderRoot);
+            if (!Files.exists(root)) {
+                Files.createDirectory(root);
+            }
+            Files.copy(file.getInputStream(), root.resolve(file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
+            Date now = new Date();
+            ProductEntity productEntity = productRepository.save(ProductEntity.builder()
+                            .name(productRequest.getName())
+                            .image(file.getOriginalFilename())
+                            .price(productRequest.getPrice())
+                            .description(productRequest.getDescription())
+                            .quanity(productRequest.getQuanity())
+                            .categoryEntity(CategoryEntity.builder()
+                                    .id(productRequest.getCategory())
+                                    .build())
+                            .colorEntity(ColorEntity.builder()
+                                    .id(productRequest.getColor())
+                                    .build())
+                            .sizeEntity(SizeEntity.builder()
+                                    .id(productRequest.getSize())
+                                    .build())
+                            .createDate(now)
+                    .build());
+            return true;
+        }catch(Exception e){
+            log.error(e.getLocalizedMessage());
+            return false;
+        }
+
+
+
     }
 }
