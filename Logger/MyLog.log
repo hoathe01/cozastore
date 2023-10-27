@@ -2923,3 +2923,924 @@ Caused by: java.lang.ClassNotFoundException: org.reactivestreams.Publisher
 2023-10-27 14:10:08.515  INFO 221573 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
 2023-10-27 14:10:11.692  WARN 221573 --- [http-nio-8080-exec-2] c.c.c.controller.LoginController         : [ROLE_ADMIN]
 2023-10-27 14:10:11.693  WARN 221573 --- [http-nio-8080-exec-2] c.c.c.controller.LoginController         : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJbe1wicm9sZVwiOlwiUk9MRV9BRE1JTlwifV0iLCJleHAiOjE2OTg0MTk0MTF9.AO41fMFU_CVIJvZWD9SkkqhzI75xQfwXSFivbb3iEsM
+2023-10-27 21:41:36.745  INFO 221573 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2023-10-27 21:41:36.750  INFO 221573 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-27 21:41:36.751  INFO 221573 --- [Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-27 21:41:36.759  INFO 221573 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:41:36.762  INFO 221573 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-27 21:41:36.781  INFO 221573 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-27 21:41:36.861  INFO 221573 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 221573 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 21:41:36.861  INFO 221573 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 21:41:37.155  INFO 221573 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 21:41:37.179  INFO 221573 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 5 JPA repository interfaces.
+2023-10-27 21:41:37.340  INFO 221573 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 21:41:37.340  INFO 221573 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 21:41:37.340  INFO 221573 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 21:41:37.347  INFO 221573 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-27 21:41:37.347  INFO 221573 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 483 ms
+2023-10-27 21:41:37.449  INFO 221573 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 21:41:37.453  INFO 221573 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-10-27 21:41:37.476  INFO 221573 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-10-27 21:41:37.477  INFO 221573 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 21:41:37.635  INFO 221573 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 21:41:37.636  INFO 221573 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:41:37.793  WARN 221573 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'loginController': Unsatisfied dependency expressed through field 'authenticationManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.authentication.AuthenticationManager' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-10-27 21:41:37.793  INFO 221573 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:41:37.794  INFO 221573 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-10-27 21:41:37.805  INFO 221573 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-10-27 21:41:37.806  INFO 221573 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-27 21:41:37.816  INFO 221573 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-10-27 21:41:37.830 ERROR 221573 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field authenticationManager in com.cybersoft.cozastore.controller.LoginController required a bean of type 'org.springframework.security.authentication.AuthenticationManager' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.authentication.AuthenticationManager' in your configuration.
+
+2023-10-27 21:41:39.286  INFO 221573 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 221573 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 21:41:39.286  INFO 221573 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 21:41:39.433  INFO 221573 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 21:41:39.443  INFO 221573 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 5 JPA repository interfaces.
+2023-10-27 21:41:39.525  INFO 221573 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 21:41:39.526  INFO 221573 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 21:41:39.526  INFO 221573 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 21:41:39.532  INFO 221573 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-10-27 21:41:39.532  INFO 221573 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 244 ms
+2023-10-27 21:41:39.601  INFO 221573 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 21:41:39.604  INFO 221573 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-10-27 21:41:39.622  INFO 221573 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-10-27 21:41:39.623  INFO 221573 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 21:41:39.753  INFO 221573 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 21:41:39.754  INFO 221573 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:41:39.927  INFO 221573 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@623acb52, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@41f9d530, org.springframework.security.web.context.SecurityContextPersistenceFilter@1f58ff01, org.springframework.security.web.header.HeaderWriterFilter@7309e4ab, org.springframework.security.web.authentication.logout.LogoutFilter@587737ac, com.cybersoft.cozastore.filter.AuthFilter@1342a149, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@115cb17c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2d4c3340, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@72078886, org.springframework.security.web.session.SessionManagementFilter@2e6efaf3, org.springframework.security.web.access.ExceptionTranslationFilter@cf04f51, org.springframework.security.web.access.intercept.AuthorizationFilter@746ee200]
+2023-10-27 21:41:39.940  WARN 221573 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 21:41:40.073  INFO 221573 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-27 21:41:40.076  INFO 221573 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-27 21:41:40.089  INFO 221573 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-27 21:41:40.098  INFO 221573 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Started CozastoreApplication in 0.853 seconds (JVM running for 1326.431)
+2023-10-27 21:41:40.101  INFO 221573 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-10-27 21:42:52.542  INFO 221573 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:42:52.543  INFO 221573 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2023-10-27 21:42:52.554  INFO 221573 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2023-10-27 21:42:55.161  INFO 225997 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 225997 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 21:42:55.162  INFO 225997 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 21:42:55.195  INFO 225997 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-27 21:42:55.195  INFO 225997 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-27 21:42:55.761  INFO 225997 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 21:42:55.797  INFO 225997 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 5 JPA repository interfaces.
+2023-10-27 21:42:56.189  INFO 225997 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 21:42:56.196  INFO 225997 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 21:42:56.197  INFO 225997 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 21:42:56.248  INFO 225997 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-27 21:42:56.249  INFO 225997 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1054 ms
+2023-10-27 21:42:56.463  INFO 225997 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 21:42:56.489  INFO 225997 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-27 21:42:56.582  INFO 225997 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-27 21:42:56.631  INFO 225997 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-27 21:42:56.831  INFO 225997 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-27 21:42:56.840  INFO 225997 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 21:42:57.346  INFO 225997 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 21:42:57.352  INFO 225997 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:42:57.765  INFO 225997 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@201c8538, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@18c1b7d, org.springframework.security.web.context.SecurityContextPersistenceFilter@85ffd14, org.springframework.security.web.header.HeaderWriterFilter@8851394, org.springframework.security.web.authentication.logout.LogoutFilter@a791335, com.cybersoft.cozastore.filter.AuthFilter@46d43dbc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@68a3f751, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2a95c6b5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@53836cde, org.springframework.security.web.session.SessionManagementFilter@af3ed39, org.springframework.security.web.access.ExceptionTranslationFilter@3ffd2930, org.springframework.security.web.access.intercept.AuthorizationFilter@772ad37d]
+2023-10-27 21:42:57.808  WARN 225997 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 21:42:58.172  INFO 225997 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-27 21:42:58.183  INFO 225997 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-27 21:42:58.213  INFO 225997 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-27 21:42:58.230  INFO 225997 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Started CozastoreApplication in 3.341 seconds (JVM running for 3.736)
+2023-10-27 21:42:58.769  INFO 225997 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-27 21:42:58.770  INFO 225997 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-27 21:42:58.772  INFO 225997 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-10-27 21:43:07.589  WARN 225997 --- [http-nio-8080-exec-2] c.c.c.controller.LoginController         : [ROLE_ADMIN]
+2023-10-27 21:43:07.589  WARN 225997 --- [http-nio-8080-exec-2] c.c.c.controller.LoginController         : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJbe1wicm9sZVwiOlwiUk9MRV9BRE1JTlwifV0iLCJleHAiOjE2OTg0NDY1ODd9.lc4AbY2oB_A-lGNpdZhI7E_bumuj23RI9oJ5LbkT-EE
+2023-10-27 21:43:32.775  WARN 225997 --- [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException: Cannot invoke "org.springframework.security.core.Authentication.getAuthorities()" because the return value of "org.springframework.security.core.context.SecurityContext.getAuthentication()" is null]
+2023-10-27 21:44:23.840  INFO 225997 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:44:23.845  INFO 225997 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-27 21:44:23.860  INFO 225997 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-27 21:44:26.411  INFO 226449 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 226449 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 21:44:26.417  INFO 226449 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 21:44:26.457  INFO 226449 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-27 21:44:26.457  INFO 226449 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-27 21:44:27.057  INFO 226449 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 21:44:27.095  INFO 226449 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 5 JPA repository interfaces.
+2023-10-27 21:44:27.492  INFO 226449 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 21:44:27.497  INFO 226449 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 21:44:27.498  INFO 226449 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 21:44:27.533  INFO 226449 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-27 21:44:27.533  INFO 226449 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1076 ms
+2023-10-27 21:44:27.747  INFO 226449 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 21:44:27.786  INFO 226449 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-27 21:44:27.920  INFO 226449 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-27 21:44:27.997  INFO 226449 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-27 21:44:28.255  INFO 226449 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-27 21:44:28.271  INFO 226449 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 21:44:28.952  INFO 226449 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 21:44:28.957  INFO 226449 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:44:29.346  INFO 226449 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@22c9819b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1139334e, org.springframework.security.web.context.SecurityContextPersistenceFilter@fc804b3, org.springframework.security.web.header.HeaderWriterFilter@af3ed39, org.springframework.security.web.authentication.logout.LogoutFilter@201c8538, com.cybersoft.cozastore.filter.AuthFilter@557c2a80, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2de2fa9b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@48e8c3e8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63bc81ac, org.springframework.security.web.session.SessionManagementFilter@5ae00581, org.springframework.security.web.access.ExceptionTranslationFilter@6fc7dd39, org.springframework.security.web.access.intercept.AuthorizationFilter@72a83d79]
+2023-10-27 21:44:29.382  WARN 226449 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 21:44:29.746  INFO 226449 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-27 21:44:29.750  INFO 226449 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-27 21:44:29.782  INFO 226449 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-27 21:44:29.799  INFO 226449 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Started CozastoreApplication in 3.656 seconds (JVM running for 4.121)
+2023-10-27 21:44:30.354  INFO 226449 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-27 21:44:30.354  INFO 226449 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-27 21:44:30.355  INFO 226449 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-10-27 21:44:33.824  WARN 226449 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException: Cannot invoke "org.springframework.security.core.Authentication.getAuthorities()" because the return value of "org.springframework.security.core.context.SecurityContext.getAuthentication()" is null]
+2023-10-27 21:45:02.358  WARN 226449 --- [http-nio-8080-exec-4] c.c.c.controller.LoginController         : [ROLE_ADMIN]
+2023-10-27 21:45:02.358  WARN 226449 --- [http-nio-8080-exec-4] c.c.c.controller.LoginController         : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJbe1wicm9sZVwiOlwiUk9MRV9BRE1JTlwifV0iLCJleHAiOjE2OTg0NDY3MDJ9.IaHijcCbXWdeWRIgqwYFdmsLs73_-NLVuG6Atxp72-A
+2023-10-27 21:45:18.993  WARN 226449 --- [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException: Cannot invoke "org.springframework.security.core.Authentication.getAuthorities()" because the return value of "org.springframework.security.core.context.SecurityContext.getAuthentication()" is null]
+2023-10-27 21:46:22.287  INFO 226449 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-10-27 21:46:22.292  INFO 226449 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-27 21:46:22.293  INFO 226449 --- [Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-27 21:46:22.304  INFO 226449 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:46:22.308  INFO 226449 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-27 21:46:22.323  INFO 226449 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-27 21:46:22.382  INFO 226449 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 226449 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 21:46:22.382  INFO 226449 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 21:46:22.559  INFO 226449 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 21:46:22.569  INFO 226449 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 5 JPA repository interfaces.
+2023-10-27 21:46:22.635  INFO 226449 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 21:46:22.635  INFO 226449 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 21:46:22.635  INFO 226449 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 21:46:22.640  INFO 226449 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-27 21:46:22.640  INFO 226449 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 256 ms
+2023-10-27 21:46:22.692  INFO 226449 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 21:46:22.694  INFO 226449 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-10-27 21:46:22.719  INFO 226449 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-10-27 21:46:22.720  INFO 226449 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 21:46:22.853  INFO 226449 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 21:46:22.854  INFO 226449 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:46:23.026  INFO 226449 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@67ef109e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@222bd9ec, org.springframework.security.web.context.SecurityContextPersistenceFilter@1a1d9665, org.springframework.security.web.header.HeaderWriterFilter@65f9629d, org.springframework.security.web.authentication.logout.LogoutFilter@ca4c6de, com.cybersoft.cozastore.filter.AuthFilter@25ab3c6b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@53a31b52, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7de06631, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c268b17, org.springframework.security.web.session.SessionManagementFilter@25c44bec, org.springframework.security.web.access.ExceptionTranslationFilter@35ff811d, org.springframework.security.web.access.intercept.AuthorizationFilter@3447678c]
+2023-10-27 21:46:23.042  WARN 226449 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 21:46:23.169  INFO 226449 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-27 21:46:23.172  INFO 226449 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-27 21:46:23.186  INFO 226449 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-27 21:46:23.195  INFO 226449 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Started CozastoreApplication in 0.833 seconds (JVM running for 117.516)
+2023-10-27 21:46:23.197  INFO 226449 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-10-27 21:46:26.079  INFO 226449 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-27 21:46:26.079  INFO 226449 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-27 21:46:26.080  INFO 226449 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-10-27 21:46:26.086  WARN 226449 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException: Cannot invoke "org.springframework.security.core.Authentication.getAuthorities()" because the return value of "org.springframework.security.core.context.SecurityContext.getAuthentication()" is null]
+2023-10-27 21:47:06.867  INFO 226449 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:47:06.868  INFO 226449 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-10-27 21:47:06.884  INFO 226449 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-10-27 21:47:09.657  INFO 227241 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 227241 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 21:47:09.658  INFO 227241 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 21:47:09.715  INFO 227241 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-27 21:47:09.715  INFO 227241 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-27 21:47:10.551  INFO 227241 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 21:47:10.600  INFO 227241 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 5 JPA repository interfaces.
+2023-10-27 21:47:11.053  INFO 227241 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 21:47:11.059  INFO 227241 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 21:47:11.060  INFO 227241 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 21:47:11.096  INFO 227241 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-27 21:47:11.096  INFO 227241 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1380 ms
+2023-10-27 21:47:11.304  INFO 227241 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 21:47:11.334  INFO 227241 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-27 21:47:11.417  INFO 227241 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-27 21:47:11.465  INFO 227241 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-27 21:47:11.665  INFO 227241 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-27 21:47:11.674  INFO 227241 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 21:47:12.226  INFO 227241 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 21:47:12.231  INFO 227241 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:47:12.597  INFO 227241 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@24b5fef4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@54ffa3a, org.springframework.security.web.context.SecurityContextPersistenceFilter@154693b9, org.springframework.security.web.header.HeaderWriterFilter@55dec4c6, org.springframework.security.web.authentication.logout.LogoutFilter@9a1f534, com.cybersoft.cozastore.filter.AuthFilter@7569ecac, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@62b8a42d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c30a85b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d7af97a, org.springframework.security.web.session.SessionManagementFilter@28227d9d, org.springframework.security.web.access.ExceptionTranslationFilter@44fee64d, org.springframework.security.web.access.intercept.AuthorizationFilter@3b434303]
+2023-10-27 21:47:12.631  WARN 227241 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 21:47:12.984  INFO 227241 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-27 21:47:12.988  INFO 227241 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-27 21:47:13.021  INFO 227241 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-27 21:47:13.037  INFO 227241 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Started CozastoreApplication in 3.662 seconds (JVM running for 4.141)
+2023-10-27 21:47:13.606  INFO 227241 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-27 21:47:13.607  INFO 227241 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-27 21:47:13.609  INFO 227241 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-10-27 21:47:15.017  WARN 227241 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException: Cannot invoke "org.springframework.security.core.Authentication.getAuthorities()" because the return value of "org.springframework.security.core.context.SecurityContext.getAuthentication()" is null]
+2023-10-27 21:50:36.609  INFO 227241 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:50:36.613  INFO 227241 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-27 21:50:36.630  INFO 227241 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-27 21:50:39.420  INFO 227963 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 227963 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 21:50:39.421  INFO 227963 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 21:50:39.460  INFO 227963 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-27 21:50:39.460  INFO 227963 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-27 21:50:40.117  INFO 227963 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 21:50:40.156  INFO 227963 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 5 JPA repository interfaces.
+2023-10-27 21:50:40.632  INFO 227963 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 21:50:40.639  INFO 227963 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 21:50:40.640  INFO 227963 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 21:50:40.683  INFO 227963 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-27 21:50:40.683  INFO 227963 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1222 ms
+2023-10-27 21:50:40.941  INFO 227963 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 21:50:40.971  INFO 227963 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-27 21:50:41.073  INFO 227963 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-27 21:50:41.137  INFO 227963 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-27 21:50:41.369  INFO 227963 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-27 21:50:41.379  INFO 227963 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 21:50:41.913  INFO 227963 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 21:50:41.920  INFO 227963 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:50:42.317  INFO 227963 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@33e6ea96, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22c9819b, org.springframework.security.web.context.SecurityContextPersistenceFilter@5ae00581, org.springframework.security.web.header.HeaderWriterFilter@2ab24638, org.springframework.security.web.authentication.logout.LogoutFilter@772ad37d, com.cybersoft.cozastore.filter.AuthFilter@1c1ad410, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@44fee64d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e9dbde4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1139334e, org.springframework.security.web.session.SessionManagementFilter@2a95c6b5, org.springframework.security.web.access.ExceptionTranslationFilter@1a03ae6f, org.springframework.security.web.access.intercept.AuthorizationFilter@6493c1c7]
+2023-10-27 21:50:42.352  WARN 227963 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 21:50:42.704  INFO 227963 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-27 21:50:42.709  INFO 227963 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-27 21:50:42.741  INFO 227963 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-27 21:50:42.758  INFO 227963 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Started CozastoreApplication in 3.617 seconds (JVM running for 4.068)
+2023-10-27 21:50:42.972  INFO 227963 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-27 21:50:42.972  INFO 227963 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-27 21:50:42.974  INFO 227963 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-10-27 21:50:44.600  WARN 227963 --- [http-nio-8080-exec-3] c.c.c.controller.LoginController         : [ROLE_ANONYMOUS]
+2023-10-27 21:51:01.095  WARN 227963 --- [http-nio-8080-exec-2] c.c.c.controller.LoginController         : [ROLE_ANONYMOUS]
+2023-10-27 21:51:01.231  INFO 227963 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2023-10-27 21:51:01.237  INFO 227963 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-27 21:51:01.238  INFO 227963 --- [Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-27 21:51:01.248  INFO 227963 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:51:01.252  INFO 227963 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-27 21:51:01.269  INFO 227963 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-27 21:51:01.364  INFO 227963 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 227963 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 21:51:01.364  INFO 227963 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 21:51:01.609  INFO 227963 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 21:51:01.626  INFO 227963 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 5 JPA repository interfaces.
+2023-10-27 21:51:01.730  INFO 227963 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 21:51:01.730  INFO 227963 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 21:51:01.730  INFO 227963 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 21:51:01.737  INFO 227963 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-27 21:51:01.737  INFO 227963 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 371 ms
+2023-10-27 21:51:01.798  INFO 227963 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 21:51:01.801  INFO 227963 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-10-27 21:51:01.823  INFO 227963 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-10-27 21:51:01.823  INFO 227963 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 21:51:02.015  INFO 227963 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 21:51:02.015  INFO 227963 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:51:02.234  INFO 227963 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@45d5da52, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6d1e2c29, org.springframework.security.web.context.SecurityContextPersistenceFilter@48daf433, org.springframework.security.web.header.HeaderWriterFilter@1e1cf916, org.springframework.security.web.authentication.logout.LogoutFilter@470dfddc, com.cybersoft.cozastore.filter.AuthFilter@7887b57e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7803fc8b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ae7ed4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@206ebabe, org.springframework.security.web.session.SessionManagementFilter@521161fe, org.springframework.security.web.access.ExceptionTranslationFilter@69eb205b, org.springframework.security.web.access.intercept.AuthorizationFilter@52a72419]
+2023-10-27 21:51:02.254  WARN 227963 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 21:51:02.372  INFO 227963 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-27 21:51:02.375  INFO 227963 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-27 21:51:02.390  INFO 227963 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-27 21:51:02.399  INFO 227963 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Started CozastoreApplication in 1.066 seconds (JVM running for 23.708)
+2023-10-27 21:51:02.401  INFO 227963 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-10-27 21:51:03.787  INFO 227963 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2023-10-27 21:51:03.792  INFO 227963 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-27 21:51:03.806  INFO 227963 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:51:03.810  INFO 227963 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-10-27 21:51:03.829  INFO 227963 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-10-27 21:51:03.890  INFO 227963 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 227963 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 21:51:03.891  INFO 227963 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 21:51:04.044  INFO 227963 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 21:51:04.058  INFO 227963 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 5 JPA repository interfaces.
+2023-10-27 21:51:04.130  INFO 227963 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 21:51:04.130  INFO 227963 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 21:51:04.130  INFO 227963 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 21:51:04.135  INFO 227963 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-27 21:51:04.136  INFO 227963 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 244 ms
+2023-10-27 21:51:04.187  INFO 227963 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 21:51:04.190  INFO 227963 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-10-27 21:51:04.204  INFO 227963 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-10-27 21:51:04.205  INFO 227963 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 21:51:04.322  INFO 227963 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 21:51:04.323  INFO 227963 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:51:04.498  INFO 227963 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@64fe7415, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1f88c0df, org.springframework.security.web.context.SecurityContextPersistenceFilter@14a592af, org.springframework.security.web.header.HeaderWriterFilter@3b816a4a, org.springframework.security.web.authentication.logout.LogoutFilter@4ea6a570, com.cybersoft.cozastore.filter.AuthFilter@57537d74, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b3771d0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4bd497c6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6e026477, org.springframework.security.web.session.SessionManagementFilter@1d840864, org.springframework.security.web.access.ExceptionTranslationFilter@1adeb467, org.springframework.security.web.access.intercept.AuthorizationFilter@615a383f]
+2023-10-27 21:51:04.511  WARN 227963 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 21:51:04.621  INFO 227963 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-27 21:51:04.623  INFO 227963 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-27 21:51:04.635  INFO 227963 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-27 21:51:04.643  INFO 227963 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Started CozastoreApplication in 0.771 seconds (JVM running for 25.953)
+2023-10-27 21:51:04.645  INFO 227963 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-10-27 21:51:30.033  INFO 227963 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:51:30.034  INFO 227963 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2023-10-27 21:51:30.045  INFO 227963 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2023-10-27 21:51:32.796  INFO 228375 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 228375 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 21:51:32.797  INFO 228375 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 21:51:32.832  INFO 228375 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-27 21:51:32.832  INFO 228375 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-27 21:51:33.415  INFO 228375 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 21:51:33.452  INFO 228375 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 5 JPA repository interfaces.
+2023-10-27 21:51:33.820  INFO 228375 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 21:51:33.825  INFO 228375 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 21:51:33.825  INFO 228375 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 21:51:33.859  INFO 228375 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-27 21:51:33.859  INFO 228375 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1026 ms
+2023-10-27 21:51:34.071  INFO 228375 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 21:51:34.096  INFO 228375 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-27 21:51:34.180  INFO 228375 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-27 21:51:34.228  INFO 228375 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-27 21:51:34.423  INFO 228375 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-27 21:51:34.433  INFO 228375 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 21:51:35.035  INFO 228375 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 21:51:35.041  INFO 228375 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:51:35.450  INFO 228375 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1056333c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1b129bbe, org.springframework.security.web.context.SecurityContextPersistenceFilter@c30a85b, org.springframework.security.web.header.HeaderWriterFilter@3be9358c, org.springframework.security.web.authentication.logout.LogoutFilter@51a47561, com.cybersoft.cozastore.filter.AuthFilter@c2f739b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7902d883, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@166ecc8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@53327877, org.springframework.security.web.session.SessionManagementFilter@3a278d0d, org.springframework.security.web.access.ExceptionTranslationFilter@72e4c90d, org.springframework.security.web.access.intercept.AuthorizationFilter@ba00ded]
+2023-10-27 21:51:35.484  WARN 228375 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 21:51:35.837  INFO 228375 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-27 21:51:35.841  INFO 228375 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-27 21:51:35.873  INFO 228375 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-27 21:51:35.890  INFO 228375 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Started CozastoreApplication in 3.37 seconds (JVM running for 3.787)
+2023-10-27 21:51:36.263  INFO 228375 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-27 21:51:36.263  INFO 228375 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-27 21:51:36.265  INFO 228375 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-10-27 21:51:40.447  WARN 228375 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException: Cannot invoke "org.springframework.security.core.Authentication.getAuthorities()" because the return value of "org.springframework.security.core.context.SecurityContext.getAuthentication()" is null]
+2023-10-27 21:52:56.814  INFO 228375 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:52:56.819  INFO 228375 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-27 21:52:56.835  INFO 228375 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-27 21:52:59.429  INFO 228748 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 228748 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 21:52:59.430  INFO 228748 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 21:52:59.472  INFO 228748 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-27 21:52:59.472  INFO 228748 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-27 21:53:00.106  INFO 228748 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 21:53:00.139  INFO 228748 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 5 JPA repository interfaces.
+2023-10-27 21:53:00.503  INFO 228748 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 21:53:00.508  INFO 228748 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 21:53:00.509  INFO 228748 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 21:53:00.546  INFO 228748 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-27 21:53:00.546  INFO 228748 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1074 ms
+2023-10-27 21:53:00.753  INFO 228748 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 21:53:00.779  INFO 228748 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-27 21:53:00.869  INFO 228748 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-27 21:53:00.917  INFO 228748 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-27 21:53:01.113  INFO 228748 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-27 21:53:01.123  INFO 228748 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 21:53:01.649  INFO 228748 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 21:53:01.654  INFO 228748 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:53:02.060  INFO 228748 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2a168a0f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@26441364, org.springframework.security.web.context.SecurityContextPersistenceFilter@166ecc8, org.springframework.security.web.header.HeaderWriterFilter@28227d9d, org.springframework.security.web.authentication.logout.LogoutFilter@24b5fef4, com.cybersoft.cozastore.filter.AuthFilter@42795e09, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@50787f10, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@29b0776, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7b0a228f, org.springframework.security.web.session.SessionManagementFilter@2516afd8, org.springframework.security.web.access.ExceptionTranslationFilter@3cb790a7, org.springframework.security.web.access.intercept.AuthorizationFilter@44090afb]
+2023-10-27 21:53:02.093  WARN 228748 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 21:53:02.456  INFO 228748 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-27 21:53:02.461  INFO 228748 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-27 21:53:02.493  INFO 228748 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-27 21:53:02.509  INFO 228748 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Started CozastoreApplication in 3.371 seconds (JVM running for 3.794)
+2023-10-27 21:53:02.998  INFO 228748 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-27 21:53:02.998  INFO 228748 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-27 21:53:03.000  INFO 228748 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-10-27 21:53:07.093  WARN 228748 --- [http-nio-8080-exec-1] c.c.c.controller.LoginController         : [ROLE_ANONYMOUS]
+2023-10-27 21:53:20.148 ERROR 228748 --- [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+io.jsonwebtoken.security.SignatureException: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+	at io.jsonwebtoken.impl.DefaultJwtParser.verifySignature(DefaultJwtParser.java:340) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:577) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:362) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:94) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:36) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:29) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseSignedClaims(DefaultJwtParser.java:821) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at com.cybersoft.cozastore.util.JwtHelper.validToken(JwtHelper.java:35) ~[classes/:na]
+	at com.cybersoft.cozastore.filter.AuthFilter.doFilterInternal(AuthFilter.java:34) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96) ~[spring-boot-actuator-2.7.16.jar:2.7.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1790) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-10-27 21:54:11.445  INFO 228748 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:54:11.450  INFO 228748 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-27 21:54:11.466  INFO 228748 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-27 21:54:14.067  INFO 229177 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 229177 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 21:54:14.068  INFO 229177 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 21:54:14.105  INFO 229177 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-27 21:54:14.105  INFO 229177 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-27 21:54:14.710  INFO 229177 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 21:54:14.747  INFO 229177 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 5 JPA repository interfaces.
+2023-10-27 21:54:15.126  INFO 229177 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 21:54:15.132  INFO 229177 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 21:54:15.132  INFO 229177 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 21:54:15.171  INFO 229177 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-27 21:54:15.171  INFO 229177 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1065 ms
+2023-10-27 21:54:15.386  INFO 229177 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 21:54:15.413  INFO 229177 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-27 21:54:15.503  INFO 229177 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-27 21:54:15.551  INFO 229177 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-27 21:54:15.764  INFO 229177 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-27 21:54:15.773  INFO 229177 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 21:54:16.308  INFO 229177 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 21:54:16.313  INFO 229177 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:54:16.723  INFO 229177 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@11887aa8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29b0776, org.springframework.security.web.context.SecurityContextPersistenceFilter@3248f9d9, org.springframework.security.web.header.HeaderWriterFilter@3ffd2930, org.springframework.security.web.authentication.logout.LogoutFilter@2b8ee8cb, com.cybersoft.cozastore.filter.AuthFilter@557c2a80, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@85ffd14, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@422c2029, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@201c8538, org.springframework.security.web.session.SessionManagementFilter@6fc7dd39, org.springframework.security.web.access.ExceptionTranslationFilter@2da36ae6, org.springframework.security.web.access.intercept.AuthorizationFilter@50787f10]
+2023-10-27 21:54:16.766  WARN 229177 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 21:54:17.129  INFO 229177 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-27 21:54:17.133  INFO 229177 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-27 21:54:17.164  INFO 229177 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-27 21:54:17.180  INFO 229177 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Started CozastoreApplication in 3.374 seconds (JVM running for 3.762)
+2023-10-27 21:54:17.687  INFO 229177 --- [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-27 21:54:17.687  INFO 229177 --- [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-27 21:54:17.689  INFO 229177 --- [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-10-27 21:54:32.602  INFO 229177 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:54:32.606  INFO 229177 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-27 21:54:32.622  INFO 229177 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-27 21:54:35.114  INFO 229368 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 229368 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 21:54:35.115  INFO 229368 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 21:54:35.151  INFO 229368 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-27 21:54:35.151  INFO 229368 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-27 21:54:35.725  INFO 229368 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 21:54:35.762  INFO 229368 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 5 JPA repository interfaces.
+2023-10-27 21:54:36.136  INFO 229368 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 21:54:36.142  INFO 229368 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 21:54:36.143  INFO 229368 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 21:54:36.180  INFO 229368 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-27 21:54:36.180  INFO 229368 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1029 ms
+2023-10-27 21:54:36.391  INFO 229368 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 21:54:36.418  INFO 229368 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-27 21:54:36.504  INFO 229368 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-27 21:54:36.555  INFO 229368 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-27 21:54:36.759  INFO 229368 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-27 21:54:36.769  INFO 229368 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 21:54:37.310  INFO 229368 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 21:54:37.316  INFO 229368 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:54:37.701  WARN 229368 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityFilterChain' defined in class path resource [com/cybersoft/cozastore/config/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception; nested exception is java.lang.IllegalArgumentException: defaultTarget must start with '/' or with 'http(s)'
+2023-10-27 21:54:37.702  INFO 229368 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:54:37.705  INFO 229368 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-27 21:54:37.714  INFO 229368 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-27 21:54:37.716  INFO 229368 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-27 21:54:37.732  INFO 229368 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-10-27 21:54:37.745 ERROR 229368 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityFilterChain' defined in class path resource [com/cybersoft/cozastore/config/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception; nested exception is java.lang.IllegalArgumentException: defaultTarget must start with '/' or with 'http(s)'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:824) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:777) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:408) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921) ~[spring-context-5.3.30.jar:5.3.30]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.30.jar:5.3.30]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.16.jar:2.7.16]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.16.jar:2.7.16]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.16.jar:2.7.16]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.16.jar:2.7.16]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.16.jar:2.7.16]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.16.jar:2.7.16]
+	at com.cybersoft.cozastore.CozastoreApplication.main(CozastoreApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-2.7.16.jar:2.7.16]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityFilterChain' defined in class path resource [com/cybersoft/cozastore/config/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception; nested exception is java.lang.IllegalArgumentException: defaultTarget must start with '/' or with 'http(s)'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:633) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1609) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1573) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1462) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1349) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:816) ~[spring-beans-5.3.30.jar:5.3.30]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception; nested exception is java.lang.IllegalArgumentException: defaultTarget must start with '/' or with 'http(s)'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648) ~[spring-beans-5.3.30.jar:5.3.30]
+	... 41 common frames omitted
+Caused by: java.lang.IllegalArgumentException: defaultTarget must start with '/' or with 'http(s)'
+	at org.springframework.util.Assert.isTrue(Assert.java:121) ~[spring-core-5.3.30.jar:5.3.30]
+	at org.springframework.security.web.authentication.AbstractAuthenticationTargetUrlRequestHandler.setDefaultTargetUrl(AbstractAuthenticationTargetUrlRequestHandler.java:158) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.config.annotation.web.configurers.LogoutConfigurer.createDefaultSuccessHandler(LogoutConfigurer.java:266) ~[spring-security-config-5.7.11.jar:5.7.11]
+	at org.springframework.security.config.annotation.web.configurers.LogoutConfigurer.getLogoutSuccessHandler(LogoutConfigurer.java:258) ~[spring-security-config-5.7.11.jar:5.7.11]
+	at org.springframework.security.config.annotation.web.configurers.LogoutConfigurer.createLogoutFilter(LogoutConfigurer.java:334) ~[spring-security-config-5.7.11.jar:5.7.11]
+	at org.springframework.security.config.annotation.web.configurers.LogoutConfigurer.configure(LogoutConfigurer.java:291) ~[spring-security-config-5.7.11.jar:5.7.11]
+	at org.springframework.security.config.annotation.web.configurers.LogoutConfigurer.configure(LogoutConfigurer.java:71) ~[spring-security-config-5.7.11.jar:5.7.11]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.configure(AbstractConfiguredSecurityBuilder.java:355) ~[spring-security-config-5.7.11.jar:5.7.11]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:309) ~[spring-security-config-5.7.11.jar:5.7.11]
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38) ~[spring-security-config-5.7.11.jar:5.7.11]
+	at com.cybersoft.cozastore.config.SecurityConfig.securityFilterChain(SecurityConfig.java:47) ~[classes/:na]
+	at com.cybersoft.cozastore.config.SecurityConfig$$EnhancerBySpringCGLIB$$991ee340.CGLIB$securityFilterChain$0(<generated>) ~[classes/:na]
+	at com.cybersoft.cozastore.config.SecurityConfig$$EnhancerBySpringCGLIB$$991ee340$$FastClassBySpringCGLIB$$50be7ec1.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.3.30.jar:5.3.30]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331) ~[spring-context-5.3.30.jar:5.3.30]
+	at com.cybersoft.cozastore.config.SecurityConfig$$EnhancerBySpringCGLIB$$991ee340.securityFilterChain(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.30.jar:5.3.30]
+	... 42 common frames omitted
+
+2023-10-27 21:55:15.890  INFO 229562 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 229562 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 21:55:15.892  INFO 229562 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 21:55:15.935  INFO 229562 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-27 21:55:15.936  INFO 229562 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-27 21:55:16.562  INFO 229562 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 21:55:16.601  INFO 229562 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 5 JPA repository interfaces.
+2023-10-27 21:55:16.971  INFO 229562 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 21:55:16.977  INFO 229562 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 21:55:16.978  INFO 229562 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 21:55:17.017  INFO 229562 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-27 21:55:17.017  INFO 229562 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1081 ms
+2023-10-27 21:55:17.246  INFO 229562 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 21:55:17.274  INFO 229562 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-27 21:55:17.366  INFO 229562 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-27 21:55:17.414  INFO 229562 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-27 21:55:17.630  INFO 229562 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-27 21:55:17.642  INFO 229562 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 21:55:18.236  INFO 229562 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 21:55:18.242  INFO 229562 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:55:18.662  INFO 229562 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@627aab6c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6474ea42, org.springframework.security.web.context.SecurityContextPersistenceFilter@3be9358c, org.springframework.security.web.header.HeaderWriterFilter@422c2029, org.springframework.security.web.authentication.logout.LogoutFilter@26a3b623, com.cybersoft.cozastore.filter.AuthFilter@4fd2630f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4079e5da, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@28227d9d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@650f70bd, org.springframework.security.web.session.SessionManagementFilter@513fdf18, org.springframework.security.web.access.ExceptionTranslationFilter@68a3f751, org.springframework.security.web.access.intercept.AuthorizationFilter@9a1f534]
+2023-10-27 21:55:18.695  WARN 229562 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 21:55:19.029  INFO 229562 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-27 21:55:19.033  INFO 229562 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-27 21:55:19.065  INFO 229562 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-27 21:55:19.081  INFO 229562 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Started CozastoreApplication in 3.445 seconds (JVM running for 3.837)
+2023-10-27 21:55:19.416  INFO 229562 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-27 21:55:19.416  INFO 229562 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-27 21:55:19.418  INFO 229562 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-10-27 21:55:22.894 ERROR 229562 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+io.jsonwebtoken.security.SignatureException: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+	at io.jsonwebtoken.impl.DefaultJwtParser.verifySignature(DefaultJwtParser.java:340) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:577) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:362) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:94) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:36) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:29) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseSignedClaims(DefaultJwtParser.java:821) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at com.cybersoft.cozastore.util.JwtHelper.validToken(JwtHelper.java:35) ~[classes/:na]
+	at com.cybersoft.cozastore.filter.AuthFilter.doFilterInternal(AuthFilter.java:34) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96) ~[spring-boot-actuator-2.7.16.jar:2.7.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1790) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-10-27 21:56:32.586  INFO 229562 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:56:32.591  INFO 229562 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-27 21:56:32.608  INFO 229562 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-27 21:56:35.378  INFO 229929 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 229929 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 21:56:35.379  INFO 229929 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 21:56:35.413  INFO 229929 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-27 21:56:35.413  INFO 229929 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-27 21:56:35.986  INFO 229929 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 21:56:36.025  INFO 229929 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 5 JPA repository interfaces.
+2023-10-27 21:56:36.434  INFO 229929 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 21:56:36.440  INFO 229929 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 21:56:36.440  INFO 229929 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 21:56:36.480  INFO 229929 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-27 21:56:36.480  INFO 229929 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1067 ms
+2023-10-27 21:56:36.691  INFO 229929 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 21:56:36.719  INFO 229929 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-27 21:56:36.814  INFO 229929 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-27 21:56:36.863  INFO 229929 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-27 21:56:37.068  INFO 229929 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-27 21:56:37.077  INFO 229929 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 21:56:37.645  INFO 229929 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 21:56:37.650  INFO 229929 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 21:56:38.155  INFO 229929 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@53836cde, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@979616f, org.springframework.security.web.context.SecurityContextPersistenceFilter@68a3f751, org.springframework.security.web.header.HeaderWriterFilter@1f2c225a, org.springframework.security.web.authentication.logout.LogoutFilter@2516afd8, com.cybersoft.cozastore.filter.AuthFilter@1707d28e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@422c2029, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a4227f6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4d08003d, org.springframework.security.web.session.SessionManagementFilter@63b7d4bc, org.springframework.security.web.access.ExceptionTranslationFilter@8851394, org.springframework.security.web.access.intercept.AuthorizationFilter@29b0776]
+2023-10-27 21:56:38.196  WARN 229929 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 21:56:38.611  INFO 229929 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-27 21:56:38.622  INFO 229929 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-27 21:56:38.660  INFO 229929 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-27 21:56:38.675  INFO 229929 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Started CozastoreApplication in 3.559 seconds (JVM running for 3.969)
+2023-10-27 21:56:38.847  INFO 229929 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-27 21:56:38.847  INFO 229929 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-27 21:56:38.849  INFO 229929 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-10-27 21:56:41.440 ERROR 229929 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+io.jsonwebtoken.security.SignatureException: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+	at io.jsonwebtoken.impl.DefaultJwtParser.verifySignature(DefaultJwtParser.java:340) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:577) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:362) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:94) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:36) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:29) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseSignedClaims(DefaultJwtParser.java:821) ~[jjwt-impl-0.12.3.jar:0.12.3]
+	at com.cybersoft.cozastore.util.JwtHelper.validToken(JwtHelper.java:35) ~[classes/:na]
+	at com.cybersoft.cozastore.filter.AuthFilter.doFilterInternal(AuthFilter.java:34) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186) ~[spring-security-web-5.7.11.jar:5.7.11]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96) ~[spring-boot-actuator-2.7.16.jar:2.7.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1790) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.80.jar:9.0.80]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-10-27 21:56:59.353  WARN 229929 --- [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException: Cannot invoke "org.springframework.security.core.Authentication.getAuthorities()" because the return value of "org.springframework.security.core.context.SecurityContext.getAuthentication()" is null]
+2023-10-27 22:11:46.417  INFO 229929 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-10-27 22:11:46.422  INFO 229929 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-27 22:11:46.423  INFO 229929 --- [Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-27 22:11:46.433  INFO 229929 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 22:11:46.438  INFO 229929 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-27 22:11:46.452  INFO 229929 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-27 22:11:46.521  INFO 229929 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 229929 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 22:11:46.521  INFO 229929 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 22:11:46.672  INFO 229929 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 22:11:46.681  INFO 229929 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 5 JPA repository interfaces.
+2023-10-27 22:11:46.743  INFO 229929 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 22:11:46.744  INFO 229929 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 22:11:46.744  INFO 229929 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 22:11:46.749  INFO 229929 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-27 22:11:46.749  INFO 229929 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 226 ms
+2023-10-27 22:11:46.796  INFO 229929 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 22:11:46.798  INFO 229929 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-10-27 22:11:46.813  INFO 229929 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-10-27 22:11:46.813  INFO 229929 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 22:11:46.917  INFO 229929 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 22:11:46.917  INFO 229929 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 22:11:47.095  INFO 229929 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@57ea6e10, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@698a7ad6, org.springframework.security.web.context.SecurityContextPersistenceFilter@3724887d, org.springframework.security.web.header.HeaderWriterFilter@73ba7d74, org.springframework.security.web.authentication.logout.LogoutFilter@761918fb, com.cybersoft.cozastore.filter.AuthFilter@4ea361bd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3130e4e6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@11c17e69, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f9c7268, org.springframework.security.web.session.SessionManagementFilter@5a25dfad, org.springframework.security.web.access.ExceptionTranslationFilter@3096c087, org.springframework.security.web.access.intercept.AuthorizationFilter@5a10d952]
+2023-10-27 22:11:47.106  WARN 229929 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 22:11:47.206  INFO 229929 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-27 22:11:47.209  INFO 229929 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-27 22:11:47.220  INFO 229929 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-27 22:11:47.228  INFO 229929 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Started CozastoreApplication in 0.729 seconds (JVM running for 912.522)
+2023-10-27 22:11:47.230  INFO 229929 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-10-27 22:12:47.231  INFO 229929 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-27 22:12:47.231  INFO 229929 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-27 22:12:47.232  INFO 229929 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-10-27 22:13:06.379  WARN 229929 --- [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException: Cannot invoke "org.springframework.security.core.Authentication.getAuthorities()" because the return value of "org.springframework.security.core.context.SecurityContext.getAuthentication()" is null]
+2023-10-27 22:13:41.428  INFO 229929 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications)
+2023-10-27 22:13:41.430  INFO 229929 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-27 22:13:41.430  INFO 229929 --- [Thread-7] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-27 22:13:41.433  INFO 229929 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 22:13:41.434  INFO 229929 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-10-27 22:13:41.443  INFO 229929 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-10-27 22:13:41.510  INFO 229929 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 229929 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 22:13:41.510  INFO 229929 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 22:13:41.699  INFO 229929 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 22:13:41.710  INFO 229929 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 5 JPA repository interfaces.
+2023-10-27 22:13:41.790  INFO 229929 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 22:13:41.790  INFO 229929 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 22:13:41.790  INFO 229929 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 22:13:41.795  INFO 229929 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-27 22:13:41.795  INFO 229929 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 283 ms
+2023-10-27 22:13:41.841  INFO 229929 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 22:13:41.843  INFO 229929 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-10-27 22:13:41.857  INFO 229929 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-10-27 22:13:41.857  INFO 229929 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 22:13:41.951  INFO 229929 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 22:13:41.951  INFO 229929 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 22:13:41.955  WARN 229929 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'authenticationProvider'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.authentication.AuthenticationProvider' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-10-27 22:13:41.955  INFO 229929 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 22:13:41.955  INFO 229929 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2023-10-27 22:13:41.957  INFO 229929 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2023-10-27 22:13:41.958  INFO 229929 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-27 22:13:41.967  INFO 229929 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-10-27 22:13:41.980 ERROR 229929 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field authenticationProvider in com.cybersoft.cozastore.config.SecurityConfig required a bean of type 'org.springframework.security.authentication.AuthenticationProvider' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.authentication.AuthenticationProvider' in your configuration.
+
+2023-10-27 22:24:37.219  INFO 235556 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 235556 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 22:24:37.221  INFO 235556 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 22:24:37.261  INFO 235556 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-27 22:24:37.261  INFO 235556 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-27 22:24:37.997  INFO 235556 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 22:24:38.034  INFO 235556 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 5 JPA repository interfaces.
+2023-10-27 22:24:38.402  INFO 235556 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 22:24:38.408  INFO 235556 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 22:24:38.408  INFO 235556 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 22:24:38.442  INFO 235556 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-27 22:24:38.442  INFO 235556 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1180 ms
+2023-10-27 22:24:38.677  INFO 235556 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 22:24:38.710  INFO 235556 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-27 22:24:38.804  INFO 235556 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-27 22:24:38.852  INFO 235556 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-27 22:24:39.071  INFO 235556 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-27 22:24:39.085  INFO 235556 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 22:24:39.695  INFO 235556 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 22:24:39.701  INFO 235556 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 22:24:40.082  INFO 235556 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2cbebd12, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6493c1c7, org.springframework.security.web.context.SecurityContextPersistenceFilter@5d7bab34, org.springframework.security.web.header.HeaderWriterFilter@4c73ad9, org.springframework.security.web.authentication.logout.LogoutFilter@166ecc8, com.cybersoft.cozastore.filter.AuthFilter@1707d28e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@79cc7d8e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@44fee64d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@26a3b623, org.springframework.security.web.session.SessionManagementFilter@68a3f751, org.springframework.security.web.access.ExceptionTranslationFilter@1c3f9b65, org.springframework.security.web.access.intercept.AuthorizationFilter@53836cde]
+2023-10-27 22:24:40.115  WARN 235556 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 22:24:40.499  INFO 235556 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-27 22:24:40.503  INFO 235556 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-27 22:24:40.540  INFO 235556 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-27 22:24:40.559  INFO 235556 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Started CozastoreApplication in 3.765 seconds (JVM running for 4.684)
+2023-10-27 22:24:40.794  INFO 235556 --- [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-27 22:24:40.795  INFO 235556 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-27 22:24:40.797  INFO 235556 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-10-27 22:25:18.402  WARN 235556 --- [http-nio-8080-exec-4] c.c.c.controller.LoginController         : [ROLE_ANONYMOUS]
+2023-10-27 22:25:43.197  INFO 235556 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2023-10-27 22:25:43.201  INFO 235556 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-27 22:25:43.202  INFO 235556 --- [Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-27 22:25:43.211  INFO 235556 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 22:25:43.216  INFO 235556 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-27 22:25:43.235  INFO 235556 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-27 22:25:43.324  INFO 235556 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 235556 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 22:25:43.324  INFO 235556 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 22:25:43.662  INFO 235556 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 22:25:43.680  INFO 235556 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 5 JPA repository interfaces.
+2023-10-27 22:25:43.792  INFO 235556 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 22:25:43.793  INFO 235556 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 22:25:43.793  INFO 235556 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 22:25:43.802  INFO 235556 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-27 22:25:43.802  INFO 235556 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 475 ms
+2023-10-27 22:25:43.890  INFO 235556 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 22:25:43.896  INFO 235556 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-10-27 22:25:43.927  INFO 235556 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-10-27 22:25:43.927  INFO 235556 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 22:25:44.125  INFO 235556 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 22:25:44.125  INFO 235556 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 22:25:44.342  INFO 235556 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3e601e03, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@49c67eb9, org.springframework.security.web.context.SecurityContextPersistenceFilter@68a2875e, org.springframework.security.web.header.HeaderWriterFilter@29632f56, org.springframework.security.web.authentication.logout.LogoutFilter@6ee33640, com.cybersoft.cozastore.filter.AuthFilter@7cec79ec, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@122c9887, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@22051c0b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ad5bc81, org.springframework.security.web.session.SessionManagementFilter@637a7903, org.springframework.security.web.access.ExceptionTranslationFilter@5705be2b, org.springframework.security.web.access.intercept.AuthorizationFilter@1292d1fb]
+2023-10-27 22:25:44.360  WARN 235556 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 22:25:44.503  INFO 235556 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-27 22:25:44.506  INFO 235556 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-27 22:25:44.523  INFO 235556 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-27 22:25:44.533  INFO 235556 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Started CozastoreApplication in 1.24 seconds (JVM running for 68.657)
+2023-10-27 22:25:44.536  INFO 235556 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-10-27 22:25:45.918  INFO 235556 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2023-10-27 22:25:45.922  INFO 235556 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-27 22:25:45.931  INFO 235556 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 22:25:45.934  INFO 235556 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-10-27 22:25:45.955  INFO 235556 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-10-27 22:25:46.023  INFO 235556 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Starting CozastoreApplication using Java 17.0.8.1 on Maliketh with PID 235556 (/home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd/target/classes started by maliketh in /home/maliketh/DEVELOPMENT/PROJECT/cozastore/BackEnd)
+2023-10-27 22:25:46.023  INFO 235556 --- [restartedMain] c.c.cozastore.CozastoreApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-27 22:25:46.187  INFO 235556 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-27 22:25:46.198  INFO 235556 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 5 JPA repository interfaces.
+2023-10-27 22:25:46.271  INFO 235556 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-27 22:25:46.271  INFO 235556 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-27 22:25:46.271  INFO 235556 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-27 22:25:46.276  INFO 235556 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-27 22:25:46.276  INFO 235556 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 251 ms
+2023-10-27 22:25:46.321  INFO 235556 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-27 22:25:46.323  INFO 235556 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-10-27 22:25:46.336  INFO 235556 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-10-27 22:25:46.337  INFO 235556 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-10-27 22:25:46.446  INFO 235556 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-27 22:25:46.447  INFO 235556 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-27 22:25:46.643  INFO 235556 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@43d1fbcc, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24747143, org.springframework.security.web.context.SecurityContextPersistenceFilter@47025389, org.springframework.security.web.header.HeaderWriterFilter@194d4bd0, org.springframework.security.web.authentication.logout.LogoutFilter@5887e8b5, com.cybersoft.cozastore.filter.AuthFilter@2a5e8c5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@45df1582, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@363fc522, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d3d106a, org.springframework.security.web.session.SessionManagementFilter@3ff0871c, org.springframework.security.web.access.ExceptionTranslationFilter@d051ea, org.springframework.security.web.access.intercept.AuthorizationFilter@2d174a7c]
+2023-10-27 22:25:46.659  WARN 235556 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-27 22:25:46.771  INFO 235556 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-27 22:25:46.774  INFO 235556 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-27 22:25:46.786  INFO 235556 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-27 22:25:46.793  INFO 235556 --- [restartedMain] c.c.cozastore.CozastoreApplication       : Started CozastoreApplication in 0.789 seconds (JVM running for 70.918)
+2023-10-27 22:25:46.796  INFO 235556 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

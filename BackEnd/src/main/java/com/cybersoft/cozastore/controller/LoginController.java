@@ -13,10 +13,12 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -43,15 +45,22 @@ public class LoginController {
         String data = gson.toJson(auth);
         String token = jwtHelper.genToken(data);
         BaseResponse response = new BaseResponse(200, "", token);
-        log.warn(auth.toString());
-        log.warn("Bearer " + token);
+//        log.warn(auth.toString());
+//        log.warn("Bearer " + token);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-//    @PostMapping("signout")
-//    public ResponseEntity<?> signout() {
-//        BaseResponse response = new BaseResponse(200, "", "Sign Out Success");
-//        return new ResponseEntity<>(response, HttpStatus.OK);
-//    }
+
+    @PostMapping("signout")
+    public ResponseEntity<?> signout() {
+        List<GrantedAuthority> auth = new ArrayList<>();
+        auth.add(new SimpleGrantedAuthority("ROLE_ANONYMOUS"));
+        log.warn(auth.toString());
+        String data = gson.toJson(auth);
+        String token = jwtHelper.genToken(data);
+        BaseResponse response = new BaseResponse(200, "", token);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
     @PostMapping("signup")
     public ResponseEntity<?> sisnup(@Valid @RequestBody UserRequest userRequest) {
         boolean isSuccess = userServiceImp.addUser(userRequest);

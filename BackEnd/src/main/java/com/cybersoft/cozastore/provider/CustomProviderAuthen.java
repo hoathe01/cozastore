@@ -27,6 +27,7 @@ public class CustomProviderAuthen implements AuthenticationProvider {
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+
         String email = authentication.getName();
         String password = authentication.getCredentials().toString();
 
@@ -35,9 +36,7 @@ public class CustomProviderAuthen implements AuthenticationProvider {
             if (passwordEncoder.matches(password, userEntity.getPassword())) {
                 List<GrantedAuthority> role = new ArrayList<>();
                 role.add(new SimpleGrantedAuthority(userEntity.getRole().getName()));
-
                 UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(email, userEntity.getPassword(), role);
-
                 SecurityContextHolder.getContext().setAuthentication(token);
 
                 return token;

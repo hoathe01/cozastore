@@ -31,9 +31,6 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-//        CookieClearingLogoutHandler cookieClearingLogoutHandler = new CookieClearingLogoutHandler("JSESSIONID");
-        HeaderWriterLogoutHandler clearSiteData = new HeaderWriterLogoutHandler(new ClearSiteDataHeaderWriter(ClearSiteDataHeaderWriter.Directive.ALL
-        ));
         return httpSecurity.csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().authorizeHttpRequests()
@@ -44,11 +41,7 @@ public class SecurityConfig {
                 .antMatchers("/product").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .logout()
-                .logoutUrl("/login/signout")
-                .logoutSuccessUrl("/hello").permitAll()
-                .addLogoutHandler(clearSiteData)
-                .deleteCookies("JSESSIONID")
+                .logout().logoutSuccessUrl("/login/signout")
                 .and()
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
