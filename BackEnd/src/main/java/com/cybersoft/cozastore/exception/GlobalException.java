@@ -16,23 +16,23 @@ import java.sql.SQLException;
 
 @ControllerAdvice
 public class GlobalException {
-    @ExceptionHandler(value = {AuthenticationCredentialsNotFoundException.class, AccessDeniedException.class})
-    @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    public ResponseEntity<?> unauthorize(HttpServletRequest req, Exception e) throws Exception {
-        BaseResponse response = new BaseResponse();
-        response.setStatusCode(401);
-        response.setMessage(e.getLocalizedMessage());
-        response.setData(null);
-        return new ResponseEntity<>(response, HttpStatus.valueOf(401));
-    }
+//    @ExceptionHandler(value = {AuthenticationCredentialsNotFoundException.class, AccessDeniedException.class})
+//    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+//    public ResponseEntity<?> unauthorize(HttpServletRequest req, Exception e) throws Exception {
+//        BaseResponse response = new BaseResponse();
+//        response.setStatusCode(401);
+//        response.setMessage(e.getLocalizedMessage());
+//        response.setData(null);
+//        return new ResponseEntity<>(response, HttpStatus.valueOf(401));
+//    }
 
-    @ExceptionHandler(value = {Exception.class})
+    @ExceptionHandler(value = {Exception.class, UnknownError.class})
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ResponseEntity<?> defaultErrorHandler(HttpServletRequest req, Exception e) throws Exception {
         BaseResponse response = new BaseResponse();
         response.setStatusCode(500);
         response.setMessage(e.getLocalizedMessage());
-        response.setData(null);
+        response.setData(req.getSession().getId());
         return new ResponseEntity<>(response, HttpStatus.valueOf(500));
     }
 

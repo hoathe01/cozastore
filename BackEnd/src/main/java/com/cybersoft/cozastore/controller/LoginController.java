@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -46,7 +47,11 @@ public class LoginController {
         log.warn("Bearer " + token);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-
+//    @PostMapping("signout")
+//    public ResponseEntity<?> signout() {
+//        BaseResponse response = new BaseResponse(200, "", "Sign Out Success");
+//        return new ResponseEntity<>(response, HttpStatus.OK);
+//    }
     @PostMapping("signup")
     public ResponseEntity<?> sisnup(@Valid @RequestBody UserRequest userRequest) {
         boolean isSuccess = userServiceImp.addUser(userRequest);

@@ -1,7 +1,6 @@
 package com.cybersoft.cozastore.config;
 
 import com.cybersoft.cozastore.filter.AuthFilter;
-import com.cybersoft.cozastore.provider.CustomProviderAuthen;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,10 +10,15 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.logout.CookieClearingLogoutHandler;
+import org.springframework.security.web.authentication.logout.HeaderWriterLogoutHandler;
+import org.springframework.security.web.authentication.logout.HttpStatusReturningLogoutSuccessHandler;
+import org.springframework.security.web.header.writers.ClearSiteDataHeaderWriter;
 
 @Configuration
 @EnableWebSecurity
@@ -24,17 +28,27 @@ public class SecurityConfig {
     @Autowired
     private AuthFilter authFilter;
 
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+//        CookieClearingLogoutHandler cookieClearingLogoutHandler = new CookieClearingLogoutHandler("JSESSIONID");
+        HeaderWriterLogoutHandler clearSiteData = new HeaderWriterLogoutHandler(new ClearSiteDataHeaderWriter(ClearSiteDataHeaderWriter.Directive.ALL
+        ));
         return httpSecurity.csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().authorizeHttpRequests()
-                .antMatchers("/hello").hasRole("ADMIN")
+                .antMatchers("/hello").permitAll()
                 .antMatchers("/user").permitAll()
                 .antMatchers("/login/**").permitAll()
-                .antMatchers("/blog").permitAll()
+                .antMatchers("/blog/**").hasRole("ADMIN")
                 .antMatchers("/product").permitAll()
                 .anyRequest().authenticated()
+                .and()
+                .logout()
+                .logoutUrl("/login/signout")
+                .logoutSuccessUrl("/hello").permitAll()
+                .addLogoutHandler(clearSiteData)
+                .deleteCookies("JSESSIONID")
                 .and()
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
