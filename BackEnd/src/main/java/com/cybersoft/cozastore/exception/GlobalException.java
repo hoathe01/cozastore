@@ -10,20 +10,22 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 
 @ControllerAdvice
-public class GlobalException {
-    @ExceptionHandler(value = {Exception.class, UnknownError.class})
+public class GlobalException extends ResponseEntityExceptionHandler {
+    @ExceptionHandler(value = {Exception.class})
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ResponseEntity<?> defaultErrorHandler(HttpServletRequest req, Exception e) throws Exception {
         BaseResponse response = new BaseResponse();
         response.setStatusCode(500);
         response.setMessage(e.getLocalizedMessage());
         response.setData(req.getSession().getId());
-        return new ResponseEntity<>(response, HttpStatus.valueOf(500));
+        return ResponseEntity.ok(response);
     }
 
 

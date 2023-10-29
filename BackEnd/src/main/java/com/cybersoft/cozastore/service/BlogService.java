@@ -125,10 +125,10 @@ public class BlogService implements BlogServiceImp {
     @Override
     public boolean updateBlog(BlogRequest blogRequest, MultipartFile file) {
         try {
-            if (blogRequest.getId() < 1) {
+            Optional<BlogEntity> blogEntity = blogRepository.findById(blogRequest.getId());
+            if (blogEntity.isEmpty()){
                 return false;
             }
-            Optional<BlogEntity> blogEntity = blogRepository.findById(blogRequest.getId());
             String imgName = blogEntity.get().getImage();
             Path root = Paths.get(FolderRoot + imgName);
             log.info(root.toString());
