@@ -10,6 +10,7 @@ import java.util.List;
 
 public interface BlogServiceImp {
     List<BlogResponse> getListBlog();
+    BlogResponse getBlog(int id);
 
     boolean addBlog(BlogRequest blogRequest, MultipartFile image);
 

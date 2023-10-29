@@ -3,6 +3,7 @@ package com.cybersoft.cozastore.controller;
 import com.cybersoft.cozastore.payload.BaseResponse;
 import com.cybersoft.cozastore.payload.request.BlogRequest;
 import com.cybersoft.cozastore.payload.request.TagRequest;
+import com.cybersoft.cozastore.payload.response.BlogResponse;
 import com.cybersoft.cozastore.service.imp.BlogServiceImp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,12 @@ public class BlogController {
     public ResponseEntity<?> getListBlog() {
         List<?> listBlog = blogServiceImp.getListBlog();
         BaseResponse response = new BaseResponse(200, "Danh Sách Blog", listBlog);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+    @GetMapping("/detail/{id}")
+    public ResponseEntity<?> getBlog(@PathVariable int id) {
+        BlogResponse blogResponse = blogServiceImp.getBlog(id);
+        BaseResponse response = new BaseResponse(200, "Danh Sách Blog", blogResponse);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 

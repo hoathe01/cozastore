@@ -74,6 +74,45 @@ public class BlogService implements BlogServiceImp {
     }
 
     @Override
+    public BlogResponse getBlog(int id) {
+        try {
+            Optional<BlogEntity> blogEntity = blogRepository.findById(id);
+            if (blogEntity.isEmpty()) {
+                return null;
+            }
+            BlogEntity blog = blogEntity.get();
+            return BlogResponse.builder()
+                    .title(blog.getTitle())
+                    .image(blog.getImage())
+                    .content(blog.getContent())
+                    .createDate(new DateResponse(blog.getCreateDate()))
+                    .user(UserResponse.builder()
+                            .email(blog.getUserEntity().getEmail())
+                            .username(blog.getUserEntity().getUsername())
+                            .role(new RoleResponse(blog.getUserEntity().getRole().getName(), null))
+                            .build())
+                    .listComment(blog.getListComment().stream()
+                            .map(commentEntity -> CommentResponse.builder()
+                                    .name(commentEntity.getName())
+                                    .email(commentEntity.getEmail())
+                                    .content(commentEntity.getContent())
+                                    .createDate(commentEntity.getCreateDate())
+                                    .build())
+                            .toList())
+                    .listTag(blog.getListTag().stream().map(tag -> TagResponse.builder()
+                                    .name(tag.getTag().getName())
+                                    .build())
+                            .toList())
+                    .build();
+
+        } catch (Exception e) {
+            log.error(e.getLocalizedMessage());
+            return null;
+        }
+    }
+
+
+    @Override
     public boolean addBlog(BlogRequest blogRequest, MultipartFile file) {
         try {
             Path root = Paths.get(FolderRoot);
@@ -126,7 +165,7 @@ public class BlogService implements BlogServiceImp {
     public boolean updateBlog(BlogRequest blogRequest, MultipartFile file) {
         try {
             Optional<BlogEntity> blogEntity = blogRepository.findById(blogRequest.getId());
-            if (blogEntity.isEmpty()){
+            if (blogEntity.isEmpty()) {
                 return false;
             }
             String imgName = blogEntity.get().getImage();
