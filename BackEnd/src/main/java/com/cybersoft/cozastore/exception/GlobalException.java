@@ -24,7 +24,7 @@ public class GlobalException extends ResponseEntityExceptionHandler {
         BaseResponse response = new BaseResponse();
         response.setStatusCode(500);
         response.setMessage(e.getLocalizedMessage());
-        response.setData(req.getSession().getId());
+        response.setData(null);
         return ResponseEntity.ok(response);
     }
 

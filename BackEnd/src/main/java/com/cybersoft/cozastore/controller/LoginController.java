@@ -9,8 +9,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,6 +25,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/login")
+@CrossOrigin
 @Slf4j
 public class LoginController {
     @Autowired
@@ -65,6 +68,14 @@ public class LoginController {
     public ResponseEntity<?> sisnup(@Valid @RequestBody UserRequest userRequest) {
         boolean isSuccess = userServiceImp.addUser(userRequest);
         BaseResponse response = new BaseResponse(200, "", isSuccess);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+
+    @PostMapping("/authen")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    public ResponseEntity<?> isAuthenticate() {
+        BaseResponse response = new BaseResponse(200, "", "isAuthenticated");
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
