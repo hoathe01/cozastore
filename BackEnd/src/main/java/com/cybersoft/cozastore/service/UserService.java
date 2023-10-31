@@ -29,6 +29,7 @@ public class UserService implements UserServiceImp {
             List<UserEntity> entityList = userRepository.findAll();
             return entityList.stream()
                     .map(u -> UserResponse.builder()
+                            .id(u.getId())
                             .email(u.getEmail())
                             .username(u.getUsername())
                             .role(new RoleResponse(u.getRole().getName(), null))
