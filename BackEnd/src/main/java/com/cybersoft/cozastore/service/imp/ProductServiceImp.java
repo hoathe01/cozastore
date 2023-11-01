@@ -11,4 +11,6 @@ public interface ProductServiceImp {
     List<ProductResponse> getListProduct();
 
     boolean addProduct(ProductRequest productRequest, MultipartFile image);
+
+    boolean deleteProduct(int id);
 }

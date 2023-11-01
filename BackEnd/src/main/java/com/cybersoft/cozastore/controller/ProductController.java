@@ -30,8 +30,13 @@ public class ProductController {
     public ResponseEntity<?> addProduct(@RequestPart ProductRequest productRequest, @RequestParam MultipartFile file){
         boolean isSuccess = productServiceImp.addProduct(productRequest,file);
         BaseResponse response = new BaseResponse(200, isSuccess ? "Thêm Thành Công" : "Thêm Thất Bai", isSuccess);
-
         return new ResponseEntity<>(response,HttpStatus.OK);
+    }
 
+    @DeleteMapping
+    public ResponseEntity<?> deleteProduct(@RequestParam int id) {
+        boolean isSuccess = productServiceImp.deleteProduct(id);
+        BaseResponse response = new BaseResponse(200, isSuccess ? "Xóa Thành Công" : "Xóa Thất Bai", isSuccess);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }

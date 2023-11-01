@@ -21,6 +21,8 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
+
 @Service
 @Slf4j
 @Transactional
@@ -102,7 +104,26 @@ public class ProductService implements ProductServiceImp {
             log.error(e.getLocalizedMessage());
             return false;
         }
+    }
 
+    @Override
+    public boolean deleteProduct(int id) {
+        try {
+            Optional<ProductEntity> productEntity = productRepository.findById(id);
+            String imgName = productEntity.get().getImage();
+            Path root = Paths.get(FolderRoot + imgName);
+            log.info(root.toString());
+            if (!Files.exists(root)){
+                Files.createDirectory(root);
+            }
+            Files.deleteIfExists(root);
+            productRepository.deleteById(id);
+            log.warn("ID đã xóa: " + id);
+            return true;
+        }catch (Exception e){
+            log.error(e.getLocalizedMessage());
+            return false;
+        }
 
 
     }
