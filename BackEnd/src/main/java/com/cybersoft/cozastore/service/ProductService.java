@@ -19,6 +19,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -37,6 +38,9 @@ public class ProductService implements ProductServiceImp {
     public List<ProductResponse> getListProduct() {
         try{
             List<ProductEntity> getListProduct = productRepository.findAll();
+
+//            List Arrays.stream(getListProduct.get(2).getImage().split(" ")).toList();
+
             return getListProduct.stream().map(productEntity -> ProductResponse.builder()
                     .id(productEntity.getId())
                     .name(productEntity.getName())
@@ -80,7 +84,14 @@ public class ProductService implements ProductServiceImp {
             if (!Files.exists(root)) {
                 Files.createDirectory(root);
             }
-            Files.copy(file.getInputStream(), root.resolve(file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
+            // đổi multipartfile qua list
+            // sử dụng vòng lập để copy từng file vào thư mục
+//            for (MultipartFile f: list) {
+                Files.copy(file.getInputStream(), root.resolve(file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
+                // add từng tên vào db
+//                String seqImgName += file.getOriginalFilename() + " ";
+//            }
+//            seqImgName = seqImgName.trim();
             Date now = new Date();
             ProductEntity productEntity = productRepository.save(ProductEntity.builder()
                             .name(productRequest.getName())

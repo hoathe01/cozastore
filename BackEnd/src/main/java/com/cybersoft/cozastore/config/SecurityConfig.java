@@ -44,8 +44,6 @@ public class SecurityConfig {
                 .antMatchers("/product").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .logout().logoutSuccessUrl("/login/signout")
-                .and()
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
