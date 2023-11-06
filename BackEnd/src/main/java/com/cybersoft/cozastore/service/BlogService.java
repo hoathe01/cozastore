@@ -7,6 +7,7 @@ import com.cybersoft.cozastore.payload.request.TagRequest;
 import com.cybersoft.cozastore.payload.response.*;
 import com.cybersoft.cozastore.repository.BlogRepository;
 import com.cybersoft.cozastore.repository.BlogTagRepository;
+import com.cybersoft.cozastore.repository.CommentRepository;
 import com.cybersoft.cozastore.service.imp.BlogServiceImp;
 import io.jsonwebtoken.io.Decoders;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +23,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,6 +38,8 @@ public class BlogService implements BlogServiceImp {
     private BlogRepository blogRepository;
     @Autowired
     private BlogTagRepository blogTagRepository;
+    @Autowired
+    private CommentRepository commentRepository;
 
     @Override
     public List<BlogResponse> getListBlog() {
@@ -125,6 +129,7 @@ public class BlogService implements BlogServiceImp {
                             .title(blogRequest.getTitle())
                             .image(file.getOriginalFilename())
                             .content(blogRequest.getContent())
+                            .createDate(new Date())
                             .userEntity(UserEntity.builder()
                                     .id(blogRequest.getUser())
                                     .build())
@@ -152,8 +157,9 @@ public class BlogService implements BlogServiceImp {
             }
             Files.deleteIfExists(root);
             blogTagRepository.deleteAllByBlog_Id(id);
-            log.warn("ID đã xóa: " + id);
+            commentRepository.deleteAllByBlogEntity_Id(id);
             blogRepository.deleteById(id);
+            log.warn("ID đã xóa: " + id);
             return true;
         } catch (Exception e) {
             log.error(e.getLocalizedMessage());
