@@ -18,7 +18,6 @@ public class ProductRequest {
     private String description;
     private Date createDate;
     private int quanity;
-
     private int category;
     private int color;
     private int size;

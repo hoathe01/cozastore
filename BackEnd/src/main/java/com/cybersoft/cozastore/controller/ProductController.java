@@ -27,7 +27,7 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<?> addProduct(@RequestPart ProductRequest productRequest, @RequestParam MultipartFile file){
+    public ResponseEntity<?> addProduct(@RequestPart ProductRequest productRequest, @RequestParam List<MultipartFile> file){
         boolean isSuccess = productServiceImp.addProduct(productRequest,file);
         BaseResponse response = new BaseResponse(200, isSuccess ? "Thêm Thành Công" : "Thêm Thất Bai", isSuccess);
         return new ResponseEntity<>(response,HttpStatus.OK);

@@ -34,17 +34,15 @@ public class ProductService implements ProductServiceImp {
 
     @Autowired
     private ProductRepository productRepository;
+
     @Override
     public List<ProductResponse> getListProduct() {
-        try{
+        try {
             List<ProductEntity> getListProduct = productRepository.findAll();
-
-//            List Arrays.stream(getListProduct.get(2).getImage().split(" ")).toList();
-
             return getListProduct.stream().map(productEntity -> ProductResponse.builder()
                     .id(productEntity.getId())
                     .name(productEntity.getName())
-                    .image(productEntity.getImage())
+                    .image(Arrays.stream(productEntity.getImage().split(" ")).toList())
                     .price(productEntity.getPrice())
                     .description(productEntity.getDescription())
                     .quanity(productEntity.getQuanity())
@@ -78,40 +76,38 @@ public class ProductService implements ProductServiceImp {
     }
 
     @Override
-    public boolean addProduct(ProductRequest productRequest, MultipartFile file) {
+    public boolean addProduct(ProductRequest productRequest, List<MultipartFile> files) {
         try {
             Path root = Paths.get(FolderRoot);
             if (!Files.exists(root)) {
                 Files.createDirectory(root);
             }
-            // đổi multipartfile qua list
-            // sử dụng vòng lập để copy từng file vào thư mục
-//            for (MultipartFile f: list) {
+            String imgNames = "";
+            for (MultipartFile file : files
+            ) {
                 Files.copy(file.getInputStream(), root.resolve(file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
-                // add từng tên vào db
-//                String seqImgName += file.getOriginalFilename() + " ";
-//            }
-//            seqImgName = seqImgName.trim();
+                imgNames += file.getOriginalFilename() + " ";
+            }
             Date now = new Date();
             ProductEntity productEntity = productRepository.save(ProductEntity.builder()
-                            .name(productRequest.getName())
-                            .image(file.getOriginalFilename())
-                            .price(productRequest.getPrice())
-                            .description(productRequest.getDescription())
-                            .quanity(productRequest.getQuanity())
-                            .categoryEntity(CategoryEntity.builder()
-                                    .id(productRequest.getCategory())
-                                    .build())
-                            .colorEntity(ColorEntity.builder()
-                                    .id(productRequest.getColor())
-                                    .build())
-                            .sizeEntity(SizeEntity.builder()
-                                    .id(productRequest.getSize())
-                                    .build())
-                            .createDate(now)
+                    .name(productRequest.getName())
+                    .image(imgNames.trim())
+                    .price(productRequest.getPrice())
+                    .description(productRequest.getDescription())
+                    .quanity(productRequest.getQuanity())
+                    .categoryEntity(CategoryEntity.builder()
+                            .id(productRequest.getCategory())
+                            .build())
+                    .colorEntity(ColorEntity.builder()
+                            .id(productRequest.getColor())
+                            .build())
+                    .sizeEntity(SizeEntity.builder()
+                            .id(productRequest.getSize())
+                            .build())
+                    .createDate(now)
                     .build());
             return true;
-        }catch(Exception e){
+        } catch (Exception e) {
             log.error(e.getLocalizedMessage());
             return false;
         }
@@ -124,14 +120,14 @@ public class ProductService implements ProductServiceImp {
             String imgName = productEntity.get().getImage();
             Path root = Paths.get(FolderRoot + imgName);
             log.info(root.toString());
-            if (!Files.exists(root)){
+            if (!Files.exists(root)) {
                 Files.createDirectory(root);
             }
             Files.deleteIfExists(root);
             productRepository.deleteById(id);
             log.warn("ID đã xóa: " + id);
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             log.error(e.getLocalizedMessage());
             return false;
         }

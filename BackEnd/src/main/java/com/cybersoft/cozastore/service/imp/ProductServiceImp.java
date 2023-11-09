@@ -10,7 +10,7 @@ import java.util.List;
 public interface ProductServiceImp {
     List<ProductResponse> getListProduct();
 
-    boolean addProduct(ProductRequest productRequest, MultipartFile image);
+    boolean addProduct(ProductRequest productRequest, List<MultipartFile> image);
 
     boolean deleteProduct(int id);
 }
