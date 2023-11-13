@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    var id = 0;
 
     $.ajax({
         method: "GET",
@@ -16,8 +15,8 @@ $(document).ready(function () {
             }
             let idBlog = x.id;
             htmlAdd += `
-                    <div class="p-b-63" onclick="localStorage.setItem('blog', ${idBlog})">
-                        <a href="blog-detail.html" class="hov-img0 how-pos5-parent">
+                    <div class="p-b-63"">
+                        <a href="blog-detail.html?id=${x.id}" class="hov-img0 how-pos5-parent">
                             <img src="../assets/file/${x.image}" alt="IMG-BLOG">
                             <div class="flex-col-c-m size-123 bg9 how-pos5">
                                 <span class="ltext-107 cl2 txt-center">${x.createDate.date}</span>
@@ -26,7 +25,7 @@ $(document).ready(function () {
                         </a>
                         <div class="p-t-32">
                             <h4 class="p-b-15">
-                                <a href="blog-detail.html" class="ltext-108 cl2 hov-cl1 trans-04">
+                                <a href="blog-detail.html?id=${x.id}" class="ltext-108 cl2 hov-cl1 trans-04">
                                     ${x.title}
                                 </a>
                             </h4>
@@ -46,7 +45,7 @@ $(document).ready(function () {
                               </span>
                               <span> ${x.listComment.length} Comments</span>
                              </span>
-                                <a href="blog-detail.html" class="stext-101 cl2 hov-cl1 trans-04 m-tb-10">
+                                <a href="blog-detail.html?id=${x.id}" class="stext-101 cl2 hov-cl1 trans-04 m-tb-10">
                                     Continue Reading
                                     <i class="fa fa-long-arrow-right m-l-9"></i>
                                 </a>
@@ -58,29 +57,34 @@ $(document).ready(function () {
         }
         element.innerHTML = htmlAdd;
     });
-    id = localStorage.getItem('blog')
+    let params = new URLSearchParams(document.location.search);
+    let id = params.get("id");
+
     $.ajax({
         method: "get",
-        url: "http://localhost:8080/blog/detail/"+id
+        url: "http://localhost:8080/blog/detail/" + id
     })
         .done(function (res) {
-                localStorage.clear()
-                dataView = res.data;
-                console.log(dataView)
-                $('#title').text(dataView.title)
-                let listTag = "";
-                let htmlTag = "";
-                let htmlComment = "";
+            localStorage.clear()
+            dataView = res.data;
+            console.log(dataView)
+            $('#title').text(dataView.title)
+            let listTag = "";
+            let htmlTag = "";
+            let htmlComment = "";
 
-                for (let t of dataView.listTag) {
-                    listTag += t.name + ", "
-                    htmlTag += `<a href="#"
+            for (let t of dataView.listTag) {
+                listTag += t.name + ", "
+                htmlTag += `<a href="#"
                                    class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
                                      ${t.name}
                                 </a>`
-                }
-                for (let comment of dataView.listComment) {
-                    htmlComment += `<div class="flex-w flex-t p-b-45">
+            }
+            var count = 0
+            var limit = 5
+            for (let comment of dataView.listComment.reverse()) {
+                count +=1
+                htmlComment += `<div class="flex-w flex-t p-b-45">
                             <div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
                                <img src="images/avatar-00.png" alt="AVATAR">
                             </div>
@@ -91,9 +95,10 @@ $(document).ready(function () {
                                 </div>
                             </div>
                             `
-                }
-                const element = document.getElementById('BlogDetail-view');
-                let htmlAdd = `
+                if (count == limit) { break }
+            }
+            const element = document.getElementById('BlogDetail-view');
+            let htmlAdd = `
             
                         <div class="wrap-pic-w how-pos5-parent">
                             <img src="../assets/file/${dataView.image}" alt="IMG-BLOG">
@@ -132,39 +137,59 @@ Tags
                         </div>
 
                         <div class="p-t-40">
-                            <h5 class="mtext-113 cl2 p-b-12">
+                            <h5 class="mtext-113 cl2 p-b-12" id="CommentTable">
                                 Leave a Comment
                             </h5>
                             <p class="stext-107 cl6 p-b-40">
                                 Your email address will not be published. Required fields are marked *
                             </p>
-                            <form>
+                            <form id="form-comment" action="#" target="CommentTable">
                                 <div class="bor19 m-b-20">
-                                <textarea class="stext-111 cl2 plh3 size-124 p-lr-18 p-tb-15" name="cmt"
-                                          placeholder="Comment..."></textarea>
+                                <textarea class="stext-111 cl2 plh3 size-124 p-lr-18 p-tb-15"
+                                          placeholder="Comment..." id="content-inp"></textarea>
                                 </div>
                                 <div class="bor19 size-218 m-b-20">
-                                    <input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" name="name"
-                                           placeholder="Name *">
+                                    <input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text"
+                                           placeholder="Name *" id="name-inp">
                                 </div>
                                 <div class="bor19 size-218 m-b-20">
-                                    <input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" name="email"
-                                           placeholder="Email *">
+                                    <input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text"
+                                           placeholder="Email *" id="email-inp">
                                 </div>
-                                <div class="bor19 size-218 m-b-30">
-                                    <input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" name="web"
-                                           placeholder="Website">
-                                </div>
-                                <button class="flex-c-m stext-101 cl0 size-125 bg3 bor2 hov-btn3 p-lr-15 trans-04">
+                                <button type="button" class="flex-c-m stext-101 cl0 size-125 bg3 bor2 hov-btn3 p-lr-15 trans-04">
                                     Post Comment
                                 </button>
                             </form>
                             <hr>
                             
                             ${htmlComment}
+                              <button type="button" onclick="alert(${limit})" class="flex-c-m stext-101 cl0 size-125 bg1 bor2 hov-btn3 p-lr-15 trans-04">
+                                    
+                                    SHOW MORE
+                                </button>
                         </div>`
-                element.innerHTML = htmlAdd;
-            }
-        )
-    ;
+            element.innerHTML = htmlAdd;
+
+            $('#form-comment button').click(function () {
+                let req = {
+                    name: $('#name-inp').val(),
+                    email: $('#email-inp').val(),
+                    content: $('#content-inp').val(),
+                    idBlog: id
+                }
+
+                $.ajax({
+                    method: "POST",
+                    url: "http://localhost:8080/comment/add",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(req)
+                })
+                    .done(function (msg) {
+
+                        window.location.reload()
+                    });
+            })
+        });
+
+
 })

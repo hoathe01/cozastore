@@ -83,8 +83,8 @@ public class ProductService implements ProductServiceImp {
                 Files.createDirectory(root);
             }
             String imgNames = "";
-            for (MultipartFile file : files
-            ) {
+            for (MultipartFile file : files)
+            {
                 Files.copy(file.getInputStream(), root.resolve(file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
                 imgNames += file.getOriginalFilename() + " ";
             }

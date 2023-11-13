@@ -39,6 +39,7 @@ public class SecurityConfig {
                 .and().authorizeHttpRequests()
                 .antMatchers("/hello").permitAll()
                 .antMatchers("/user/**").hasRole("ADMIN")
+                .antMatchers("/comment/**").permitAll()
                 .antMatchers("/login/**").permitAll()
                 .antMatchers("/blog/**").permitAll()
                 .antMatchers("/product").permitAll()

@@ -77,6 +77,7 @@ public class BlogService implements BlogServiceImp {
         }
     }
 
+
     @Override
     public BlogResponse getBlog(int id) {
         try {
@@ -123,7 +124,9 @@ public class BlogService implements BlogServiceImp {
             if (!Files.exists(root)) {
                 Files.createDirectory(root);
             }
+
             Files.copy(file.getInputStream(), root.resolve(file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
+
             BlogEntity blog =
                     blogRepository.save(BlogEntity.builder()
                             .title(blogRequest.getTitle())
