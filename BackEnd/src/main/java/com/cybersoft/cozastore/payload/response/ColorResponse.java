@@ -8,5 +8,6 @@ import lombok.*;
 @Getter
 @Setter
 public class ColorResponse {
+    private int id;
     private String name;
 }

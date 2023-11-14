@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -49,6 +50,7 @@ public class UserService implements UserServiceImp {
                     .password(passwordEncoder.encode(userRequest.getPassword()))
                     .username(userRequest.getUsername())
                     .role(new RoleEntity(userRequest.getRole(), null, null, null))
+                    .createDate(new Date())
                     .build());
             return true;
         } catch (Exception e) {

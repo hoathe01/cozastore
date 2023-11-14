@@ -67,7 +67,7 @@ public class LoginController {
     @PostMapping("signup")
     public ResponseEntity<?> sisnup(@Valid @RequestBody UserRequest userRequest) {
         boolean isSuccess = userServiceImp.addUser(userRequest);
-        BaseResponse response = new BaseResponse(200, "", isSuccess);
+        BaseResponse response = new BaseResponse(200, isSuccess? "Đăng kí thành công":"Đăng kí thất bại", isSuccess);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
