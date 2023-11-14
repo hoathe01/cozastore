@@ -14,6 +14,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,9 +25,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @Slf4j
@@ -71,6 +71,36 @@ public class BlogService implements BlogServiceImp {
                             .toList())
                     .build()).toList();
 
+        } catch (Exception e) {
+            log.error(e.getLocalizedMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public List<BlogResponse> getPagination(int index, int quantity) {
+        try {
+            Page<BlogEntity> page = blogRepository.findAll(PageRequest.of(index, quantity));
+            return page.stream()
+                    .map(blogEntity -> BlogResponse.builder()
+                    .id(blogEntity.getId())
+                    .title(blogEntity.getTitle())
+                    .image(blogEntity.getImage())
+                    .content(blogEntity.getContent())
+                    .createDate(new DateResponse(blogEntity.getCreateDate()))
+                    .user(UserResponse.builder()
+                            .username(blogEntity.getUserEntity().getUsername())
+                            .build())
+                    .listComment(blogEntity.getListComment().stream()
+                            .map(commentEntity -> CommentResponse.builder()
+                                    .name(commentEntity.getName())
+                                    .build())
+                            .toList())
+                    .listTag(blogEntity.getListTag().stream().map(tag -> TagResponse.builder()
+                                    .name(tag.getTag().getName())
+                                    .build())
+                            .toList())
+                    .build()).toList();
         } catch (Exception e) {
             log.error(e.getLocalizedMessage());
             return null;

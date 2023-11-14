@@ -1,8 +1,11 @@
 $(document).ready(function () {
-
+    const url = new URLSearchParams(window.location.search);
+    const indexPage = url.get('index')
+    // const size = url.get('quantity')
+    const size = parseInt(localStorage.getItem('size'))
     $.ajax({
         method: "GET",
-        url: "http://localhost:8080/blog"
+        url: `http://localhost:8080/blog/${indexPage}/${size}`
     }).done(function (res) {
         dataView = res.data;
 

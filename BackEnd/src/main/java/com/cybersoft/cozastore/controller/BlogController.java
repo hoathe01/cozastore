@@ -22,9 +22,15 @@ public class BlogController {
     @Autowired
     private BlogServiceImp blogServiceImp;
 
-    @GetMapping
+    @GetMapping("all")
     public ResponseEntity<?> getListBlog() {
         List<?> listBlog = blogServiceImp.getListBlog();
+        BaseResponse response = new BaseResponse(200, "Danh Sách Blog", listBlog);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+    @GetMapping("/{index}/{quantity}")
+    public ResponseEntity<?> getPageBlogs(@PathVariable int index, @PathVariable int quantity) {
+        List<?> listBlog = blogServiceImp.getPagination(index,quantity);
         BaseResponse response = new BaseResponse(200, "Danh Sách Blog", listBlog);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
