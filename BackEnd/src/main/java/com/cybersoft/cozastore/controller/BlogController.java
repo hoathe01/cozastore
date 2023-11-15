@@ -28,9 +28,9 @@ public class BlogController {
         BaseResponse response = new BaseResponse(200, "Danh Sách Blog", listBlog);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-    @GetMapping("/{index}/{quantity}")
-    public ResponseEntity<?> getPageBlogs(@PathVariable int index, @PathVariable int quantity) {
-        List<?> listBlog = blogServiceImp.getPagination(index,quantity);
+    @GetMapping("/{index}/{quantity}/{category}")
+    public ResponseEntity<?> getPageBlogs(@PathVariable int index, @PathVariable int quantity, @PathVariable int category) {
+        List<?> listBlog = blogServiceImp.getPagination(index,quantity,category);
         BaseResponse response = new BaseResponse(200, "Danh Sách Blog", listBlog);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

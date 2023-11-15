@@ -8,11 +8,14 @@ import com.cybersoft.cozastore.payload.response.*;
 import com.cybersoft.cozastore.repository.BlogRepository;
 import com.cybersoft.cozastore.repository.BlogTagRepository;
 import com.cybersoft.cozastore.repository.CommentRepository;
+import com.cybersoft.cozastore.repository.TagRepository;
 import com.cybersoft.cozastore.service.imp.BlogServiceImp;
 import io.jsonwebtoken.io.Decoders;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.annotations.Cache;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -40,6 +43,8 @@ public class BlogService implements BlogServiceImp {
     private BlogTagRepository blogTagRepository;
     @Autowired
     private CommentRepository commentRepository;
+    @Autowired
+    private TagRepository tagRepository;
 
     @Override
     public List<BlogResponse> getListBlog() {
@@ -78,29 +83,41 @@ public class BlogService implements BlogServiceImp {
     }
 
     @Override
-    public List<BlogResponse> getPagination(int index, int quantity) {
+    public List<BlogResponse> getPagination(int index, int quantity, int category) {
         try {
             Page<BlogEntity> page = blogRepository.findAll(PageRequest.of(index, quantity));
-            return page.stream()
+
+            List<BlogResponse> blogResponses = page.stream()
                     .map(blogEntity -> BlogResponse.builder()
-                    .id(blogEntity.getId())
-                    .title(blogEntity.getTitle())
-                    .image(blogEntity.getImage())
-                    .content(blogEntity.getContent())
-                    .createDate(new DateResponse(blogEntity.getCreateDate()))
-                    .user(UserResponse.builder()
-                            .username(blogEntity.getUserEntity().getUsername())
-                            .build())
-                    .listComment(blogEntity.getListComment().stream()
-                            .map(commentEntity -> CommentResponse.builder()
-                                    .name(commentEntity.getName())
+                            .id(blogEntity.getId())
+                            .title(blogEntity.getTitle())
+                            .image(blogEntity.getImage())
+                            .content(blogEntity.getContent())
+                            .createDate(new DateResponse(blogEntity.getCreateDate()))
+                            .user(UserResponse.builder()
+                                    .username(blogEntity.getUserEntity().getUsername())
                                     .build())
-                            .toList())
-                    .listTag(blogEntity.getListTag().stream().map(tag -> TagResponse.builder()
-                                    .name(tag.getTag().getName())
-                                    .build())
-                            .toList())
-                    .build()).toList();
+                            .listComment(blogEntity.getListComment().stream()
+                                    .map(commentEntity -> CommentResponse.builder()
+                                            .name(commentEntity.getName())
+                                            .build())
+                                    .toList())
+                            .listTag(blogEntity.getListTag().stream().map(tag -> TagResponse.builder()
+                                            .id(tag.getTag().getId())
+                                            .name(tag.getTag().getName())
+                                            .build())
+                                    .toList())
+                            .build()).toList();
+
+            if (category > 0) {
+                Optional<TagEntity> tagEntity = tagRepository.findById(category);
+                log.error(tagEntity.get().getId() + " - " + tagEntity.get().getName());
+                return blogResponses.stream().filter(
+                        blog -> blog.getListTag().stream().anyMatch(
+                                tag -> tag.getId() == category)).toList();
+
+            }
+            return blogResponses;
         } catch (Exception e) {
             log.error(e.getLocalizedMessage());
             return null;

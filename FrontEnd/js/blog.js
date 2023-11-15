@@ -1,198 +1,127 @@
 $(document).ready(function () {
     const url = new URLSearchParams(window.location.search);
-    const indexPage = url.get('index')
-    // const size = url.get('quantity')
-    const size = parseInt(localStorage.getItem('size'))
+    let index = url.get('index')
+    if (!index){index = 0}
+
+    const BlogTable = document.getElementById('table-blog')
+    const TotalPage = document.getElementById('id-pagination')
+    const CategoriesTable =document.getElementById('categories-table')
+    const pagination = document.querySelector('select');
+    pagination.addEventListener('change', function () {
+        localStorage.setItem('size', pagination.value)
+        window.location.reload()
+    });
+
     $.ajax({
         method: "GET",
-        url: `http://localhost:8080/blog/${indexPage}/${size}`
-    }).done(function (res) {
-        dataView = res.data;
-
-        let listTag = "";
-        const element = document.getElementById('blog-view');
-        let htmlAdd = "";
-        for (let x of dataView) {
-            for (let t of x.listTag) {
-                listTag += t.name + ", ";
-            }
-            let idBlog = x.id;
-            htmlAdd += `
-                    <div class="p-b-63"">
-                        <a href="blog-detail.html?id=${x.id}" class="hov-img0 how-pos5-parent">
-                            <img src="../assets/file/${x.image}" alt="IMG-BLOG">
-                            <div class="flex-col-c-m size-123 bg9 how-pos5">
-                                <span class="ltext-107 cl2 txt-center">${x.createDate.date}</span>
-                                <span class="stext-109 cl3 txt-center">${x.createDate.month} ${x.createDate.year}</span>
-                            </div>
-                        </a>
-                        <div class="p-t-32">
-                            <h4 class="p-b-15">
-                                <a href="blog-detail.html?id=${x.id}" class="ltext-108 cl2 hov-cl1 trans-04">
-                                    ${x.title}
-                                </a>
-                            </h4>
-                            <p class="stext-117 cl6" style="height:100px;overflow:hidden;">
-                               ${x.content}
-                            </p>
-                            <div class="flex-w flex-sb-m p-t-18">
-                             <span class="flex-w flex-m stext-111 cl2 p-r-30 m-tb-10">
-                               <span>
-                                <span class="cl4">By</span>
-                                  ${x.user.username}
-                                <span class="cl12 m-l-4 m-r-6">|</span>
-                               </span>
-                              <span>
-                                 ${listTag}
-                               <span class="cl12 m-l-4 m-r-6">|</span>
-                              </span>
-                              <span> ${x.listComment.length} Comments</span>
-                             </span>
-                                <a href="blog-detail.html?id=${x.id}" class="stext-101 cl2 hov-cl1 trans-04 m-tb-10">
-                                    Continue Reading
-                                    <i class="fa fa-long-arrow-right m-l-9"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-            `
-            listTag = "";
-        }
-        element.innerHTML = htmlAdd;
-    });
-    let params = new URLSearchParams(document.location.search);
-    let id = params.get("id");
-
-    $.ajax({
-        method: "get",
-        url: "http://localhost:8080/blog/detail/" + id
+        url: `http://localhost:8080/blog/${index}/${localStorage.getItem('size')}/${localStorage.getItem('idTag')}`
     })
-        .done(function (res) {
-            localStorage.clear()
-            dataView = res.data;
-            console.log(dataView)
-            $('#title').text(dataView.title)
-            let listTag = "";
-            let htmlTag = "";
-            let htmlComment = "";
+        .done(function (msg) {
+            const blogs = msg.data
 
-            for (let t of dataView.listTag) {
-                listTag += t.name + ", "
-                htmlTag += `<a href="#"
-                                   class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-                                     ${t.name}
-                                </a>`
-            }
-            var count = 0
-            var limit = 5
-            for (let comment of dataView.listComment.reverse()) {
-                count +=1
-                htmlComment += `<div class="flex-w flex-t p-b-45">
-                            <div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
-                               <img src="images/avatar-00.png" alt="AVATAR">
-                            </div>
-                                <div class="size-207">
-                                    <div class="mtext-104">${comment.name}</div>
-                                    <div class="mt-auto cl3">${comment.email}</div>
-                                    <p class="stext-102 cl6">${comment.content}</p>
-                                </div>
-                            </div>
-                            `
-                if (count == limit) { break }
-            }
-            const element = document.getElementById('BlogDetail-view');
-            let htmlAdd = `
-            
-                        <div class="wrap-pic-w how-pos5-parent">
-                            <img src="../assets/file/${dataView.image}" alt="IMG-BLOG">
-                            <div class="flex-col-c-m size-123 bg9 how-pos5">
-                                <span class="ltext-107 cl2 txt-center">${dataView.createDate.date}</span>
-                                <span class="stext-109 cl3 txt-center">${dataView.createDate.month} ${dataView.createDate.year}</span>
-                            </div>
-                        </div>
-                        <div class="p-t-32">
-                        <span class="flex-w flex-m stext-111 cl2 p-b-19"><span>
-                        <span class="cl4">By</span> ${dataView.user.username}
+            blogs.forEach((blog, index) => {
+                let htmlDisplay = '';
+                let div = document.createElement('div');
+                div.setAttribute("id", `idBlog-${index}`)
+
+                BlogTable.appendChild(div)
+                tags = []
+                blog.listTag.forEach((tag) => {tags.push(tag.name)})
+
+                htmlDisplay = `
+                    <div class="p-b-63">
+                    <a href="blog-detail.html?idBlog=${blog.id}" class="hov-img0 how-pos5-parent">
+                       <img src="../../assets/file/${blog.image}" alt="IMG-BLOG">
+                       <div class="flex-col-c-m size-123 bg9 how-pos5">
+                       <span class="ltext-107 cl2 txt-center">${blog.createDate.date}</span>
+                       <span class="stext-109 cl3 txt-center">${blog.createDate.month} ${blog.createDate.year}</span>
+                       </div>
+                    </a>
+                    <div class="p-t-32">
+                        <h4 class="p-b-15">
+                        <a href="blog-detail.html?idBlog=${blog.id}" class="ltext-108 cl2 hov-cl1 trans-04">
+                            ${blog.title}
+                        </a>
+                        </h4>
+                        <p class="stext-117 cl6">
+                            ${blog.content.slice(0,150)}...
+                        </p>
+                        <div class="flex-w flex-sb-m p-t-18">
+                        <span class="flex-w flex-m stext-111 cl2 p-r-30 m-tb-10">
+                        <span>
+                        <span class="cl4">By</span> ${blog.user.username}
                         <span class="cl12 m-l-4 m-r-6">|</span>
                         </span>
-                            <span>${dataView.createDate.date} ${dataView.createDate.month}, ${dataView.createDate.year}<span class="cl12 m-l-4 m-r-6">|</span>
-                            </span>
-                        <span>
-                            ${listTag}
-                            <span class="cl12 m-l-4 m-r-6">|</span>
+                        <span>${tags.join(', ')}
+                        <span class="cl12 m-l-4 m-r-6">|</span>
                         </span>
-                            <span> ${dataView.listComment.length} Comments</span>
-</span>
-                            <h4 class="ltext-109 cl2 p-b-28">
-                                ${dataView.title}
-                            </h4>
-                            <p class="stext-117 cl6 p-b-26">
-                                ${dataView.content}
-                            </p>
+                        <span>${blog.listComment.length} Comments</span>
+                        </span>
+                        <a href="blog-detail.html?idBlog=${blog.id}" class="stext-101 cl2 hov-cl1 trans-04 m-tb-10">
+                            Continue Reading
+                        <i class="fa fa-long-arrow-right m-l-9"></i>
+                        </a>
                         </div>
-                        <div class="flex-w flex-t p-t-16">
-<span class="size-216 stext-116 cl8 p-t-4">
-Tags
-</span>
-                            <div class="flex-w size-217">
-                               ${htmlTag}
-                            </div>
                         </div>
+                        </div>
+                `
+                BlogTable.innerHTML += htmlDisplay;
 
-                        <div class="p-t-40">
-                            <h5 class="mtext-113 cl2 p-b-12" id="CommentTable">
-                                Leave a Comment
-                            </h5>
-                            <p class="stext-107 cl6 p-b-40">
-                                Your email address will not be published. Required fields are marked *
-                            </p>
-                            <form id="form-comment" action="#" target="CommentTable">
-                                <div class="bor19 m-b-20">
-                                <textarea class="stext-111 cl2 plh3 size-124 p-lr-18 p-tb-15"
-                                          placeholder="Comment..." id="content-inp"></textarea>
-                                </div>
-                                <div class="bor19 size-218 m-b-20">
-                                    <input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text"
-                                           placeholder="Name *" id="name-inp">
-                                </div>
-                                <div class="bor19 size-218 m-b-20">
-                                    <input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text"
-                                           placeholder="Email *" id="email-inp">
-                                </div>
-                                <button type="button" class="flex-c-m stext-101 cl0 size-125 bg3 bor2 hov-btn3 p-lr-15 trans-04">
-                                    Post Comment
-                                </button>
-                            </form>
-                            <hr>
-                            
-                            ${htmlComment}
-                              <button type="button" onclick="alert(${limit})" class="flex-c-m stext-101 cl0 size-125 bg1 bor2 hov-btn3 p-lr-15 trans-04">
-                                    
-                                    SHOW MORE
-                                </button>
-                        </div>`
-            element.innerHTML = htmlAdd;
-
-            $('#form-comment button').click(function () {
-                let req = {
-                    name: $('#name-inp').val(),
-                    email: $('#email-inp').val(),
-                    content: $('#content-inp').val(),
-                    idBlog: id
-                }
-
-                $.ajax({
-                    method: "POST",
-                    url: "http://localhost:8080/comment/add",
-                    contentType: "application/json; charset=utf-8",
-                    data: JSON.stringify(req)
-                })
-                    .done(function (msg) {
-
-                        window.location.reload()
-                    });
-            })
+            });
         });
 
+
+    $.ajax({
+        method: "GET",
+        url: "http://localhost:8080/blog/all"
+    })
+        .done(function( msg ) {
+            const blog = msg.data.length
+            const amountPage = localStorage.getItem('size')
+            var paging = Math.ceil(blog / amountPage)
+            let htmlDisplay = '';
+
+            for (let i = 1; i <= paging; i++) {
+                htmlDisplay += `<a href="blog.html?index=${i - 1}" class="flex-c-m how-pagination1 trans-04 m-all-7">${i}</a>`
+
+            }
+            TotalPage.innerHTML = htmlDisplay;
+        });
+
+    $.ajax({
+        method: "GET",
+        url: "http://localhost:8080/tag"
+    })
+        .done(function( msg ) {
+            const tags = msg.data
+            console.log(tags)
+
+
+            CategoriesTable.innerHTML = `
+                            <li class="bor18">
+                            <a href="blog.html?index=${index}" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4" 
+                            onclick="localStorage.setItem('idTag', '0')">
+                            All
+                            </a>
+            `
+
+            tags.forEach((tag,index) => {
+                let htmlDisplay = '';
+                let li = document.createElement('li')
+                li.setAttribute("id", `idTag-${index}`)
+                CategoriesTable.appendChild(li)
+                let idTag = tag.id
+                htmlDisplay = `
+                            <li class="bor18">
+                            <a href="blog.html?index=${index}" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4" 
+                            onclick="localStorage.setItem('idTag', ${idTag})">
+                            ${tag.name}
+                            </a>`
+
+                CategoriesTable.innerHTML += htmlDisplay;
+            })
+
+
+        });
 
 })

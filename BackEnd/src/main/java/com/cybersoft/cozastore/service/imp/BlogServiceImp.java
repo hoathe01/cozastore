@@ -13,7 +13,7 @@ import java.util.Map;
 public interface BlogServiceImp {
     List<BlogResponse> getListBlog();
 
-    List<BlogResponse> getPagination(int index, int quantity);
+    List<BlogResponse> getPagination(int index, int quantity, int category);
 
     BlogResponse getBlog(int id);
 
