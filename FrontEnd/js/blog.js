@@ -9,6 +9,7 @@ $(document).ready(function () {
     const TotalPage = document.getElementById('id-pagination')
     const CategoriesTable = document.getElementById('categories-table')
     const searchResult = document.getElementById('search-result')
+    const tagsList = document.getElementById('tags-list')
 
     $("#blog-search").on('input',function() {
         let value = $(this).val()
@@ -183,6 +184,28 @@ $(document).ready(function () {
                 }
             }
             TotalPage.innerHTML = htmlDisplay;
+        });
+
+    $.ajax({
+        method: "GET",
+        url: "http://localhost:8080/tag"
+    })
+        .done(function (msg) {
+            const tags = msg.data
+            console.log(tags)
+            tagsList.innerHTML = `                       
+                                 <a href="blog.html?index=${index}" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5"
+                                 onclick="localStorage.setItem('idTag', '0');localStorage.setItem('size', '10')">ALL</a>
+                                `
+            tags.forEach((tag) => {
+                let htmlDisplay = '';
+                let idTag = tag.id
+                htmlDisplay = `
+                            <a href="blog.html?index=0" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5"
+                            onclick="localStorage.setItem('idTag', ${idTag});localStorage.setItem('size', '50')">${tag.name}</a>`
+
+                tagsList.innerHTML += htmlDisplay;
+            })
         });
 
     $.ajax({

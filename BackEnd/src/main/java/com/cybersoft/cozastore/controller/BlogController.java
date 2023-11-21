@@ -81,7 +81,7 @@ public class BlogController {
     }
 
     @PutMapping
-    public ResponseEntity<?> updateBlog(@RequestBody BlogRequest blogRequest, @RequestParam MultipartFile file) {
+    public ResponseEntity<?> updateBlog(@RequestPart BlogRequest blogRequest, @RequestParam MultipartFile file) {
         boolean isSuccess = blogServiceImp.updateBlog(blogRequest, file);
         BaseResponse response = new BaseResponse(200, isSuccess ? "Sửa Thành Công" : "Sửa Thất Bai", isSuccess);
         return new ResponseEntity<>(response, HttpStatus.OK);

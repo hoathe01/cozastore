@@ -2,7 +2,7 @@ $(document).ready(function () {
     const idElTable = document.getElementById("idBlogTable");
 
     $.ajax({
-        url: `http://localhost:8080/blog`,
+        url: `http://localhost:8080/blog/all`,
         method: "GET",
     }).done(function (data) {
         const blogs = data.data;
@@ -36,7 +36,7 @@ $(document).ready(function () {
                           <a class="dropdown-item btn-delete" href="#" idDelete="${blog.id}">
                                 <i class="bx bx-edit-alt me-1"></i> Delete
                             </a>
-                            <a class="dropdown-item" href="blog-detail.html?id=${blog.id}">
+                            <a class="dropdown-item" href="update-blog.html?id=${blog.id}">
                                 <i class="bx bx-edit-alt me-1"></i> Edit
                             </a>
                             <a class="dropdown-item" href="../../html/user-detail.html?id=${blog.id}">

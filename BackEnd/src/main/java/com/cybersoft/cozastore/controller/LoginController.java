@@ -42,14 +42,12 @@ public class LoginController {
     @PostMapping("signin")
     public ResponseEntity<?> signin(@RequestParam String email, @RequestParam String password) {
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(email, password);
-        authenticationManager.authenticate(authenticationToken);
+         authenticationManager.authenticate(authenticationToken);
         List<?> auth = (List<?>) SecurityContextHolder.getContext().getAuthentication().getAuthorities();
 
         String data = gson.toJson(auth);
         String token = jwtHelper.genToken(data);
         BaseResponse response = new BaseResponse(200, "", token);
-//        log.warn(auth.toString());
-//        log.warn("Bearer " + token);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 

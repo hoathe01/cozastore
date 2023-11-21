@@ -38,7 +38,7 @@ public class SecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().authorizeHttpRequests()
                 .antMatchers("/hello").permitAll()
-                .antMatchers("/user/**").hasRole("ADMIN")
+                .antMatchers("/user/**").permitAll()
                 .antMatchers("/comment/**").permitAll()
                 .antMatchers("/tag/**").permitAll()
                 .antMatchers("/size/**").permitAll()

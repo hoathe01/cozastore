@@ -6,6 +6,7 @@ import com.cybersoft.cozastore.payload.BaseResponse;
 import com.cybersoft.cozastore.service.imp.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -18,6 +19,7 @@ public class UserController {
 
     @Autowired
     private UserServiceImp userServiceImp;
+
 
     @GetMapping
     public ResponseEntity<?> getListUser() {

@@ -21,7 +21,7 @@ $(document).ready(function () {
             let role = user.role.name.substring(5).toLowerCase()
             htmlDisplay += `
                 <td>${index + 1}</td>
-                <td></td>
+                <td>${user.createDate.date} ${user.createDate.month} ${user.createDate.year}</td>
                 <td>${user.username}</td>
                 <td>PROTECTED</td>
                 <td>${user.email}</td>

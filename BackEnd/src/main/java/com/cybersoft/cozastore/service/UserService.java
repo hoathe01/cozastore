@@ -2,6 +2,7 @@ package com.cybersoft.cozastore.service;
 
 import com.cybersoft.cozastore.entity.RoleEntity;
 import com.cybersoft.cozastore.payload.request.UserRequest;
+import com.cybersoft.cozastore.payload.response.DateResponse;
 import com.cybersoft.cozastore.payload.response.RoleResponse;
 import com.cybersoft.cozastore.payload.response.UserResponse;
 import com.cybersoft.cozastore.entity.UserEntity;
@@ -33,6 +34,7 @@ public class UserService implements UserServiceImp {
                             .id(u.getId())
                             .email(u.getEmail())
                             .username(u.getUsername())
+                            .createDate(new DateResponse(u.getCreateDate()))
                             .role(new RoleResponse(u.getRole().getName(), null))
                             .build()).toList();
         } catch (Exception e) {
@@ -49,7 +51,7 @@ public class UserService implements UserServiceImp {
                     .email(userRequest.getEmail())
                     .password(passwordEncoder.encode(userRequest.getPassword()))
                     .username(userRequest.getUsername())
-                    .role(new RoleEntity(userRequest.getRole(), null, null, null))
+                    .role(RoleEntity.builder().id(2).build())
                     .createDate(new Date())
                     .build());
             return true;
