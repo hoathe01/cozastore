@@ -46,6 +46,8 @@ public class SecurityConfig {
                 .antMatchers("/login/**").permitAll()
                 .antMatchers("/blog/**").permitAll()
                 .antMatchers("/product").permitAll()
+                .antMatchers("/cart/**").permitAll()
+                .antMatchers("/oder/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
